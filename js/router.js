@@ -6,8 +6,6 @@ import emailApp from './apps/misterEmail/pages/email-app.cmp.js';
 import bookApp from './apps/missBook/pages/book-app.cmp.js';
 import bookDetails from './apps/missBook/pages/book-details.cmp.js';
 
-/* <appsus-app /> */
-
 const routes = [
     {
         path: '/',
