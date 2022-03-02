@@ -1,14 +1,12 @@
 import appsusApp from './pages/appsus-app.cmp.js';
+import homePage from './pages/home-page.cmp.js'
+import aboutPage from './pages/about-page.cmp.js'
 import keepApp from './apps/missKeep/pages/keep-app.cmp.js';
 import emailApp from './apps/misterEmail/pages/email-app.cmp.js';
 import bookApp from './apps/missBook/pages/book-app.cmp.js';
-import homePage from './pages/home-page.cmp.js'
-import aboutPage from './pages/about-page.cmp.js'
-// import bookDetails from './pages/book-details.cmp.js';
-// import bookDescription from './pages/book-description.cmp.js';
+import bookDetails from './apps/missBook/pages/book-details.cmp.js';
 
 /* <appsus-app /> */
-
 
 const routes = [
     {
@@ -35,14 +33,10 @@ const routes = [
         path: '/book',
         component: bookApp
     },
-    // {
-    //     path: '/book/:bookId',
-    //     component: bookDetails
-    // },
-    // {
-    //     path: '/book/descriction/:bookId',
-    //     component: bookDescription
-    // },
+    {
+        path: '/book/:bookId',
+        component: bookDetails
+    }
 ];
 
 export const router = VueRouter.createRouter({

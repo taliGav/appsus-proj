@@ -96,21 +96,6 @@ body, h1, h2, h3, h4, h5, h6, p, ul {
     border: 1px rgb(109, 107, 2) solid;
 }
 
-/* header */
-/* footer */
-
-.app-header, .app-footer {
-    background-color: darkgreen;
-    height: 5vh;
-}
-
-.app-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-}
-
 /* book-details */
 
 .book-details {
