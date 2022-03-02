@@ -26,3 +26,12 @@ export default {
         this.unsubscribe();
     }
 };
+
+
+    //             .then(() => {
+    //                 eventBus.emit('show-msg', { txt: 'Deleted succesfully', type: 'success' });
+    //             })
+    //             .catch(err => {
+    //                 console.error(err);
+    //                 eventBus.emit('show-msg', { txt: 'Error - please try again later', type: 'error' });
+    //             });
