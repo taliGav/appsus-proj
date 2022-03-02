@@ -14,9 +14,8 @@ export const noteService = {
 };
 
 function query() {
-  return storageService.query(BOOKS_KEY);
+  return storageService.query(NOTES_KEY);
 }
-
 
 const notes = [
     {
