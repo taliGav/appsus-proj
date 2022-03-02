@@ -5,7 +5,7 @@ export default {
     template: `
         <section class="note-list">
             <ul>
-                <li v-for="note in notes" :key="note.id" class="note-preview-container">
+                <li v-for="note in notes" :key="note.id" class="note-preview-container clean-list">
                     <note-preview v-if="note" :note="note"/>
                     <div class="actions">
                         <button>test1</button><button>test2</button>
