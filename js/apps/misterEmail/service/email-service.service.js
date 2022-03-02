@@ -1,5 +1,5 @@
 import { utilService } from '../../../service/util-service.js';
-import { storageService } from '../../../service/async-storage-service';
+import { storageService } from '../../../service/async-storage-service.js';
 
 const EMAILS_KEY = 'emails';
 _createEmails();
