@@ -6,15 +6,17 @@ import emailDetails from "./email-details.cmp.js";
 
 
 export default {
-
-    props: ['??'],
     template: `
         <section class="email-app">
-            helllooo
+            <email-list :emails="emails"/>
+            <!-- <pre>{{emails}}</pre> -->
         </section>
         `,
     data() {
         return {
+            emails: null,
+            selectedEmails: null,
+            filterBy: null
         };
     },
     components: {
@@ -23,8 +25,16 @@ export default {
         emailDetails
     },
     created() {
+        emailService.query()
+            .then(emails => this.emails = emails);
     },
     methods: {
+        selectEmails(email) {
+            this.selectedEmails = email;
+        },
+        setFilter(filterBy) {
+            this.filterBy = filterBy;
+        }
     },
     computed: {
     },

@@ -1,8 +1,12 @@
 export default {
 
-    props: ['??'],
+    props: ['email'],
     template: `
         <section class="email-preview">
+            <p>{{email.from}}</p>
+            <p>{{email.subject}}</p>
+            <p>{{email.body}}</p>
+            <!-- <p>{{getDate}}</p> -->
         </section>
         `,
     data() {
@@ -14,6 +18,9 @@ export default {
     created() {
     },
     methods: {
+        co() {
+            console.log(this.email);
+        }
     },
     computed: {
     },
