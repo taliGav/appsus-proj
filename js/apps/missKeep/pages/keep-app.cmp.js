@@ -1,24 +1,26 @@
-export default {
+import { noteService } from "../services/note.service.js";
+import noteList from "./../cmps/note-list.cmp.js";
 
-props:['??'],
-template: `
-<section class="keep-app">
-</section>
-`,
-data() {
-return {
+export default {
+    template: `
+        <section class="keep-app app-main">
+            <book-list v-if="notes" />
+        </section>
+    `,
+    components: {
+        noteList
+    },
+    data() {
+        return {
+            notes: null,
+        };
+    },
+    created() {
+        noteService.query()
+            .then(notes => this.notes = notes);
+    },
+    methods: {
+    },
+    computed: {
+    }
 };
-},
-components: {
-},
-created(){
-},
-methods: {
-},
-computed: {
-},
-mounted() {
-},
-unmounted() {
-}
-}
