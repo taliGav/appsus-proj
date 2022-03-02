@@ -2,7 +2,7 @@ export default {
 
     props: ['??'],
     template: `
-            <section class="home-page app-main">
+            <section class="user-msg">
             </section>
         `,
     data() {
