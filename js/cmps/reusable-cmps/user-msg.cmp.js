@@ -1,24 +1,28 @@
-export default {
+import { eventBus } from '../../service/eventBus-service.js';
 
-    props: ['??'],
+export default {
     template: `
-            <section class="user-msg">
-            </section>
-        `,
+        <section v-if="msg" class="user-msg" :class="msg.type">
+            <p>{{msg.txt}}</p>
+        </section>
+    `,
     data() {
         return {
+            msg: null
         };
     },
-    components: {
-    },
     created() {
+        this.unsubscribe = eventBus.on('show-msg', this.showMsg);
     },
     methods: {
-    },
-    computed: {
-    },
-    mounted() {
+        showMsg(msg) {
+            this.msg = msg;
+            setTimeout(() => {
+                this.msg = null;
+            }, 3000);
+        }
     },
     unmounted() {
+        this.unsubscribe();
     }
-}
+};
