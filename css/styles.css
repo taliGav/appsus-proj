@@ -18,3 +18,7 @@
 /* mq */
 
 @import 'basic/mq.css';
+
+/* MISS BOOK */
+
+@import './miss-book-style.css';
