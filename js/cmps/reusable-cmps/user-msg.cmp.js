@@ -29,7 +29,7 @@ export default {
 
 
     //             .then(() => {
-    //                 eventBus.emit('show-msg', { txt: 'Deleted succesfully', type: 'success' });
+    //                 eventBus.emit('show-msg', { txt: 'mail sent', type: 'success' });
     //             })
     //             .catch(err => {
     //                 console.error(err);
