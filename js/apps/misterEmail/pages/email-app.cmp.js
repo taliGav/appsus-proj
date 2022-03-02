@@ -8,14 +8,14 @@ import emailDetails from "./email-details.cmp.js";
 export default {
     template: `
         <section class="email-app">
-            <email-list :emails="emails"/>
-            <!-- <pre>{{emails}}</pre> -->
+            <email-list :emails="emails" @remove="deleteEmail" @selected="selectEmail"/>
+            <email-details v-if="selectedEmail" :email="selectedEmail" @close="selectedEmail = null"/>
         </section>
         `,
     data() {
         return {
             emails: null,
-            selectedEmails: null,
+            selectedEmail: null,
             filterBy: null
         };
     },
@@ -34,6 +34,17 @@ export default {
         },
         setFilter(filterBy) {
             this.filterBy = filterBy;
+        },
+        deleteEmail(emailId) {
+            console.log('try');
+            emailService.remove(emailId)
+                .then(() => {
+                    const idx = this.emails.findIndex((email) => email.id === emailId);
+                    this.emails.splice(idx, 1);
+                });
+        },
+        selectEmail(email) {
+            this.selectedEmail = email;
         }
     },
     computed: {

@@ -1,23 +1,24 @@
-export default {
 
-    props: ['email'],
+
+export default {
     template: `
-        <section class="email-preview">
-            <p>{{email.from}}</p>
-            <p>{{email.sentAt}}</p>
-            <p>{{email.subject}}</p>
-            <p>{{email.body}}</p>
+        <section class="email-compose">
+
         </section>
         `,
     data() {
         return {
+
         };
     },
     components: {
+
     },
     created() {
+
     },
     methods: {
+
     },
     computed: {
     },
@@ -25,4 +26,4 @@ export default {
     },
     unmounted() {
     }
-}
+};

@@ -83,11 +83,9 @@ function addReview(email, review) {
 }
 
 function remove(emailId) {
-    const emails = query();
-    const idx = emails.findIndex(email => email.id === emailId);
-    emails.splice(idx, 1);
-    utilService.saveToStorage(EMAILS_KEY, emails);
+    return storageService.remove(EMAILS_KEY, emailId);
 }
+
 
 function save(email) {
     email.id = utilService.makeId();

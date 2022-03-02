@@ -10,9 +10,9 @@ export default {
                     <div class="actions">
                         <input type="checkbox">
                         <button>⭐</button>
-                        <button>delete</button>
+                        <button @click="deleteEmail(email.id)">🗑️</button>
                         <button>read/unread</button>
-                        <button>details</button>
+                        <button @click="select(email)">details</button>
                     </div>
                 </li>
             </ul>
@@ -24,11 +24,18 @@ export default {
         };
     },
     components: {
-        emailPreview
+        emailPreview,
+
     },
     created() {
     },
     methods: {
+        deleteEmail(id) {
+            this.$emit('remove', id);
+        },
+        select(email) {
+            this.$emit('selected', email);
+        }
     },
     computed: {
 
