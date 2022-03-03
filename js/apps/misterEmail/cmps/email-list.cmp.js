@@ -11,39 +11,25 @@ export default {
                         <input type="checkbox">
                         <button>⭐</button>
                         <button @click="deleteEmail(email.id)">🗑️</button>
-                        <button>read/unread</button>
+                        <button>👁️</button>
                         <button @click="select(email)">details</button>
                     </div>
                 </li>
             </ul>
         </section>
         `,
-    data() {
-        return {
-            // selectedEmail
-        };
-    },
     components: {
         emailPreview,
 
-    },
-    created() {
     },
     methods: {
         deleteEmail(id) {
             this.$emit('remove', id);
         },
         select(email) {
-            this.$emit('selected', email);
+            this.$emit('select', email);
         }
     },
-    computed: {
-
-    },
-    mounted() {
-    },
-    unmounted() {
-    }
 };
 
 

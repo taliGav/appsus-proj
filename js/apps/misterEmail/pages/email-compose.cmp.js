@@ -18,12 +18,6 @@ export default {
             emailToEdit: emailService.getEmptyEmail()
         };
     },
-    components: {
-
-    },
-    created() {
-
-    },
     methods: {
         send() {
             if (!this.emailToEdit.body || !this.emailToEdit.to) return;
@@ -32,10 +26,4 @@ export default {
             this.emailToEdit = emailService.getEmptyEmail();
         }
     },
-    computed: {
-    },
-    mounted() {
-    },
-    unmounted() {
-    }
 };

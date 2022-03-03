@@ -9,20 +9,4 @@ export default {
             <p>{{email.body}}</p>
         </section>
         `,
-    data() {
-        return {
-        };
-    },
-    components: {
-    },
-    created() {
-    },
-    methods: {
-    },
-    computed: {
-    },
-    mounted() {
-    },
-    unmounted() {
-    }
 }

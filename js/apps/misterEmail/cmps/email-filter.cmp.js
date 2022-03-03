@@ -13,25 +13,12 @@ export default {
         return {
             filterBy: {
                 textFilterd: '',
-                from: '',
-                subject: '',
-                body: ''
             }
         };
-    },
-    components: {
-    },
-    created() {
     },
     methods: {
         setFilter() {
             this.$emit('filtered', this.filterBy);
         }
-    },
-    computed: {
-    },
-    mounted() {
-    },
-    unmounted() {
     }
-}
+};

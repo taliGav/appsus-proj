@@ -98,7 +98,7 @@ function getEmptyEmail() {
         subject: '',
         body: '',
         isRead: false,
-        sentAt: null,
+        sentAt: + new Date(),
         to: '',
         from: ''
     };
