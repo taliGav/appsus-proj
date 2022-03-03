@@ -57,16 +57,64 @@ function _createNotes() {
 function get(noteId) {
     console.log('noteId is:', noteId);
     return storageService.get(NOTES_KEY, noteId);
-  }
-  
-  
-// function addNote(note, review) {
-//     review.id = utilService.makeId();
-//     if (!Array.isArray(book.reviews)) {
-//       book.reviews = [];
-//     }
-//     book.reviews.push(review);
-//     storageService.put(BOOKS_KEY, book);
-//     return book;
-//   }
-  
+}
+
+function getEmptyNoteGeneral(type, maxSpeed = 0) {
+    return {
+        id: '',
+        type,
+        isPinned: false,
+        info: null
+    };
+}
+
+function _createNote(type) {
+    const note = getEmptyNoteGeneral(type);
+    car.id = utilService.makeId();
+    return note;
+}
+
+
+function addNote(note, review) {
+    note.id = utilService.makeId();
+    if (!Array.isArray(book.reviews)) {
+        book.reviews = [];
+    }
+    book.reviews.push(note);
+    storageService.put(BOOKS_KEY, book);
+    return book;
+}
+
+function getEmptyImg(vendor = '', maxSpeed = 0) {
+    return {
+        id: '',
+        vendor,
+        maxSpeed,
+        prevOwners: []
+    };
+}
+function getEmptyTodos(vendor = '', maxSpeed = 0) {
+    return {
+        id: '',
+        vendor,
+        maxSpeed,
+        prevOwners: []
+    };
+}
+function getEmptyTxt(vendor = '', maxSpeed = 0) {
+    return {
+        id: '',
+        vendor,
+        maxSpeed,
+        prevOwners: []
+    };
+}
+function getEmptyVideo(type, maxSpeed = 0) {
+    return {
+        id: '',
+        type,
+        isPinned: false,
+        info: null
+    };
+}
+
