@@ -14,9 +14,10 @@ export default {
 
         <section v-if="notes" class="note-cmps app-main flex">
             <div v-for="(cmp, idx) in notes.cmps">
-                    <component :is="cmp.type"  :info="cmp.info"></component>
-                </div>
-          </section>
+                <component :is="cmp.type"  :info="cmp.info"></component>
+            </div>
+            
+        </section>
     `,
     components: {
         noteTxt,
