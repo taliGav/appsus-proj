@@ -12,9 +12,7 @@ export default {
                         <button @click="toggle(email,'star')">⭐</button>
                         <button @click="deleteEmail(email.id)">🗑️</button>
                         <button @click="toggle(email,'read')">👁️</button>
-                        <!-- <button @click="select(email)">details</button> -->
                         <router-link :to="'/email/'+email.id">Details</router-link>
-
                     </div>
                 </li>
             </ul>

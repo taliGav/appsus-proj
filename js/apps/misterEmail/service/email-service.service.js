@@ -107,7 +107,9 @@ function getEmptyEmail() {
         isRead: false,
         sentAt: + new Date(),
         to: '',
-        from: ''
+        from: '',
+        stared: false,
+        status: 'sent'
     };
 }
 
