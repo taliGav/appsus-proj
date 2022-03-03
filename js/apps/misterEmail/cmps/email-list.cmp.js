@@ -9,9 +9,9 @@ export default {
                     <email-preview v-if="email" :email="email"/>
                     <div class="actions">
                         <input type="checkbox">
-                        <button>⭐</button>
+                        <button @click="toggle(email,'star')">⭐</button>
                         <button @click="deleteEmail(email.id)">🗑️</button>
-                        <button @click="toggleRead(email)">👁️</button>
+                        <button @click="toggle(email,'read')">👁️</button>
                         <button @click="select(email)">details</button>
                     </div>
                 </li>
@@ -29,9 +29,8 @@ export default {
         select(email) {
             this.$emit('select', email);
         },
-        toggleRead(email) {
-            console.log('this.email is:', email);
-            email.isRead = !email.isRead;
+        toggle(email, info) {
+            this.$emit('toggleInfo', email, info);
         }
     },
 };

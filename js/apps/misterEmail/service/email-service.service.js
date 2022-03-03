@@ -27,6 +27,7 @@ function _createEmails() {
             isRead: false,
             sentAt: 1551133930594,
             to: 'momo@momo.com',
+            stared: false,
             from: 'xxxx'
         }, {
             id: 'e102',
@@ -35,6 +36,7 @@ function _createEmails() {
             isRead: false,
             sentAt: 1551145322654,
             to: 'mimi@mimi.com',
+            stared: false,
             from: 'aaaaa'
         }, {
             id: 'e103',
@@ -43,7 +45,8 @@ function _createEmails() {
             isRead: false,
             sentAt: 1551197485214,
             to: 'mama@mama.com',
-            from: 'bbbbb'
+            from: 'bbbbb',
+            stared: false
         }, {
             id: 'e104',
             subject: 'coco!',
@@ -51,6 +54,7 @@ function _createEmails() {
             isRead: false,
             sentAt: 1551131502546,
             to: 'mumu@mumu.com',
+            stared: false,
             from: 'ccccc'
         }, {
             id: 'e105',
@@ -59,6 +63,7 @@ function _createEmails() {
             isRead: false,
             sentAt: 1551184052461,
             to: 'mlml@mlml.com',
+            stared: false,
             from: 'ddddd'
         }
         ];

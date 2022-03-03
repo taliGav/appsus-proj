@@ -11,7 +11,7 @@ export default {
         <section class="email-app">
             <email-filter v-if="emailsForDisplay" @filtered="setFilter"/>
             <email-compose v-if="emailsForDisplay" @send="sendMail"/>
-            <email-list v-if="emailsForDisplay" :emails="emailsForDisplay" @remove="deleteEmail" @select="selectEmail"/>
+            <email-list v-if="emailsForDisplay" :emails="emailsForDisplay" @remove="deleteEmail" @select="selectEmail" @toggleInfo="changeToggle"/>
             <email-details v-if="selectedEmail" :email="selectedEmail" @close="selectedEmail = null"/>
         </section>
         `,
@@ -49,6 +49,18 @@ export default {
         },
         sendMail(email) {
             this.emails.push(email);
+        },
+        changeToggle(email, info) {
+            console.log('this.email is:', info);
+            if (info === 'star') {
+                email.stared = !email.stared;
+                console.log('this.email is:', email);
+            }
+            else if (info === 'read') {
+                email.isRead = !email.isRead;
+                console.log('this.email is:', email);
+            }
+            emailService.save(email);
         }
     },
     computed: {
