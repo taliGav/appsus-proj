@@ -1,5 +1,5 @@
 export default {
-    props: ['note'],
+    props: ['info'],
     template: `
         <section class="note-preview">
             <div class="note-preview-details">
