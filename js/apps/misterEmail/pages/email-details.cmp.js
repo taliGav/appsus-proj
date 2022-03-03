@@ -1,3 +1,5 @@
+import { emailService } from "../service/email-service.service.js";
+
 export default {
 
     props: ['email'],
@@ -18,6 +20,8 @@ export default {
     components: {
     },
     created() {
+        this.email.isRead = true;
+        emailService.save(this.email);
     },
     methods: {
     },
@@ -27,4 +31,4 @@ export default {
     },
     unmounted() {
     }
-}
+};

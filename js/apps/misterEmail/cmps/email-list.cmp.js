@@ -6,12 +6,12 @@ export default {
         <section class="email-list">
             <ul>
                 <li v-for="email in emails" :key="email.id">
-                    <email-preview :email="email"/>
+                    <email-preview v-if="email" :email="email"/>
                     <div class="actions">
                         <input type="checkbox">
                         <button>⭐</button>
                         <button @click="deleteEmail(email.id)">🗑️</button>
-                        <button>👁️</button>
+                        <button @click="toggleRead(email)">👁️</button>
                         <button @click="select(email)">details</button>
                     </div>
                 </li>
@@ -28,6 +28,10 @@ export default {
         },
         select(email) {
             this.$emit('select', email);
+        },
+        toggleRead(email) {
+            console.log('this.email is:', email);
+            email.isRead = !email.isRead;
         }
     },
 };

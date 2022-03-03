@@ -9,9 +9,9 @@ import emailCompose from "./email-compose.cmp.js";
 export default {
     template: `
         <section class="email-app">
-            <email-filter @filtered="setFilter"/>
-            <email-compose @send="sendMail"/>
-            <email-list :emails="emailsForDisplay" @remove="deleteEmail" @select="selectEmail"/>
+            <email-filter v-if="emailsForDisplay" @filtered="setFilter"/>
+            <email-compose v-if="emailsForDisplay" @send="sendMail"/>
+            <email-list v-if="emailsForDisplay" :emails="emailsForDisplay" @remove="deleteEmail" @select="selectEmail"/>
             <email-details v-if="selectedEmail" :email="selectedEmail" @close="selectedEmail = null"/>
         </section>
         `,

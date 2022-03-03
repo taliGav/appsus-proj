@@ -4,7 +4,7 @@ export default {
     template: `
         <section class="email-compose">
         <h2>add mail</h2>
-        <pre>{{emailToEdit}}</pre>
+        <!-- <pre>{{emailToEdit}}</pre> -->
         <form @submit.prevent="send">
             <input type="text" v-model="emailToEdit.to" placeholder="To">
             <input type="text" v-model="emailToEdit.subject" placeholder="Subject">
