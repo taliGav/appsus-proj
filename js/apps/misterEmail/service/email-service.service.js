@@ -32,7 +32,7 @@ function _createEmails() {
             id: 'e102',
             subject: 'spam!',
             body: 'github',
-            isRead: true,
+            isRead: false,
             sentAt: 1551145322654,
             to: 'mimi@mimi.com',
             from: 'aaaaa'
@@ -48,7 +48,7 @@ function _createEmails() {
             id: 'e104',
             subject: 'coco!',
             body: 'coco jambo',
-            isRead: true,
+            isRead: false,
             sentAt: 1551131502546,
             to: 'mumu@mumu.com',
             from: 'ccccc'
@@ -68,8 +68,10 @@ function _createEmails() {
 }
 
 function get(emailId) {
-    console.log('bookId is:', emailId);
-    return storageService.get(EMAILS_KEY, emailId);
+    return storageService.get(EMAILS_KEY, emailId)
+        .then(email => {
+            return _setNextPrevEmailId(email);
+        });
 }
 
 function addReview(email, review) {
@@ -104,11 +106,21 @@ function getEmptyEmail() {
     };
 }
 
-function _createEmail(vendor, maxSpeed = 250) {
+function _createEmail(subject, body) {
     const email = {
         id: utilService.makeId(),
-        vendor,
-        maxSpeed,
+        subject,
+        body,
+        isRead: false,
     };
     return email;
+}
+
+function _setNextPrevEmailId(email) {
+    return storageService.query(EMAILS_KEY).then(emails => {
+        const emailIdx = emails.findIndex(currEmail => currEmail.id === email.id);
+        email.nextEmailId = (emails[emailIdx + 1]) ? emails[emailIdx + 1].id : emails[0].id;
+        email.prevEmailId = (emails[emailIdx - 1]) ? emails[emailIdx - 1].id : emails[emails.length - 1].id;
+        return email;
+    });
 }
