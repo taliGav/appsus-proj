@@ -88,18 +88,19 @@ function remove(emailId) {
 
 
 function save(email) {
-    email.id = utilService.makeId();
-    const emails = query();
-    emails.push(email);
-    utilService.saveToStorage(EMAILS_KEY, emails);
-    return email;
+    if (email.id) return storageService.put(EMAILS_KEY, email);
+    else return storageService.post(EMAILS_KEY, email);
 }
 
 function getEmptyEmail() {
     return {
         id: '',
-        vendor: '',
-        maxSpeed: 0
+        subject: '',
+        body: '',
+        isRead: false,
+        sentAt: null,
+        to: '',
+        from: ''
     };
 }
 
