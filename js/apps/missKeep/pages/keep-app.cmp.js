@@ -1,5 +1,8 @@
 import { noteService } from "../services/note.service.js";
-import txtPreview from "./../cmps/note-txt.cmp.js";
+import noteTxt from "./../cmps/note-txt.cmp.js";
+import noteImg from "./../cmps/note-img.cmp.js";
+import noteTodos from "./../cmps/note-todos.cmp.js";
+import noteVideo from "./../cmps/note-video.cmp.js";
 
 // import noteList from "./../cmps/note-list.cmp.js";
 
@@ -9,17 +12,19 @@ export default {
             <note-list v-if="notes" :notes="notes" />
         </section> -->
 
-        <section v-if="notes" class="note-list app-main">
-            <ul>
+        <section v-if="notes" class="note-cmps app-main">
+            <!-- <ul> -->
             <div v-for="(cmp, idx) in notes.cmps">
                     <component :is="cmp.type"  :info="cmp.info"></component>
                 </div>
-            </ul>
+            <!-- </ul> -->
         </section>
-
     `,
     components: {
-        txtPreview
+        noteTxt,
+        noteImg,
+        noteTodos,
+        noteVideo
         // noteList
     },
     data() {
@@ -28,6 +33,7 @@ export default {
         };
     },
     created() {
+        console.log('hi');
         noteService.query()
             .then(notes => {
                 this.notes = notes;
