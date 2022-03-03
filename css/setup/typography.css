@@ -1,6 +1,6 @@
-@font-face{
-    font-family:pegasus ;
-    src: url(/fonts/ElectromagneticLungs.otf);
+@font-face {
+    font-family: pegasus;
+    src: url(./../fonts/ElectromagneticLungs.otf);
 }
 
 /* @font-face{

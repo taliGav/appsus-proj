@@ -1,0 +1,71 @@
+.app-header {
+    padding: 10px;
+    font-family: pegasus;
+    font-size: 40px;
+}
+
+.app-header h2 {
+    color: black;
+}
+
+.app-header a {
+    text-decoration: none;
+}
+
+.app-header .logo img {
+    width: 65px;
+}
+
+.app-header .nav-bar img {
+    width: 65px;
+    position: relative;
+    top: 5px;
+}
+
+.app-header .keep-link :nth-child(2) {
+    display: none;
+}
+
+.app-header .keep-link:hover :nth-child(2) {
+    display: inline-block;
+}
+
+.app-header .keep-link:hover :first-child {
+    display: none;
+}
+
+.app-header .email-link :nth-child(2) {
+    display: none;
+}
+
+.app-header .email-link:hover :nth-child(2) {
+    display: inline-block;
+}
+
+.app-header .email-link:hover :first-child {
+    display: none;
+}
+
+.app-header .books-link :nth-child(2) {
+    display: none;
+}
+
+.app-header .books-link:hover :nth-child(2) {
+    display: inline-block;
+}
+
+.app-header .books-link:hover :first-child {
+    display: none;
+}
+
+.app-header .about-link :nth-child(2) {
+    display: none;
+}
+
+.app-header .about-link:hover :nth-child(2) {
+    display: inline-block;
+}
+
+.app-header .about-link:hover :first-child {
+    display: none;
+}
