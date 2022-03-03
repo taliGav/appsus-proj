@@ -24,6 +24,7 @@ function _createNotes() {
                     type: "note-txt",
                     isPinned: true,
                     info: {
+                        title:'Title',
                         txt: "Fullstack Me Baby!"
                     }
                 },
@@ -31,7 +32,6 @@ function _createNotes() {
                     id: "n102",
                     type: "note-txt",
                     info: {
-                        url: "http://some-img/me",
                         title: "Bobi and Me",
                         txt: " Baby!"
 
@@ -39,18 +39,18 @@ function _createNotes() {
                     style: {
                         backgroundColor: "#00d"
                     }
-                }
-                // {
-                //     id: "n102",
-                //     type: "note-img",
-                //     info: {
-                //         url: "http://some-img/me",
-                //         title: "Bobi and Me"
-                //     },
-                //     style: {
-                //         backgroundColor: "#00d"
-                //     }
-                // },
+                },
+                {
+                    id: "n103",
+                    type: "note-img",
+                    info: {
+                        url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSw5OEu4H9bL04EQVyYy4QWTCUlvKjhud4kI-wfHOsX9fj25EnfRprm8TSvfj5UynJb290&usqp=CAU",
+                        title: "Bobi and Me"
+                    },
+                    style: {
+                        backgroundColor: "#00d"
+                    }
+                },
                 // {
                 //     id: "n103",
                 //     type: "note-todos",

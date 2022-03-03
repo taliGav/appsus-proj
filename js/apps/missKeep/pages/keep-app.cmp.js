@@ -12,13 +12,11 @@ export default {
             <note-list v-if="notes" :notes="notes" />
         </section> -->
 
-        <section v-if="notes" class="note-cmps app-main">
-            <!-- <ul> -->
+        <section v-if="notes" class="note-cmps app-main flex">
             <div v-for="(cmp, idx) in notes.cmps">
                     <component :is="cmp.type"  :info="cmp.info"></component>
                 </div>
-            <!-- </ul> -->
-        </section>
+          </section>
     `,
     components: {
         noteTxt,
