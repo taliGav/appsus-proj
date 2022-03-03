@@ -69,12 +69,23 @@ function _createNotes() {
     return notes;
 }
 
+function post(entityType, newEntity) {
+    newEntity.id = _makeId()
+    return query(entityType)
+        .then(entities => {
+            entities.push(newEntity);
+            _save(entityType, entities)
+            return newEntity;
+        })
+}
+
+
 function get(noteId) {
-    console.log('noteId is:', noteId);
+    console.log('noteId is:', noteId); 
     return storageService.get(NOTES_KEY, noteId);
 }
 
-function getEmptyNoteGeneral(type, maxSpeed = 0) {
+function getEmptyNoteGeneral(type) {
     return {
         id: '',
         type,
@@ -85,10 +96,9 @@ function getEmptyNoteGeneral(type, maxSpeed = 0) {
 
 function _createNote(type) {
     const note = getEmptyNoteGeneral(type);
-    car.id = utilService.makeId();
+    note.id = utilService.makeId();
     return note;
 }
-
 
 function addNote(note, review) {
     note.id = utilService.makeId();
