@@ -1,11 +1,8 @@
 .app-header {
-    padding: 10px;
+    height: 10vh;
     font-family: pegasus;
     font-size: 40px;
-}
-
-.app-header h2 {
-    color: black;
+    padding: 0 15px;
 }
 
 .app-header a {
@@ -21,6 +18,23 @@
     position: relative;
     top: 5px;
 }
+
+/* //////// */
+
+.app-header h2 {
+    color: black;
+}
+
+.app-header h4 {
+    font-weight: 100;
+    display: inline-block;
+    padding: 10px;
+    color: black;
+}
+
+/* ///// */
+/* hover */
+/* ///// */
 
 .app-header .keep-link :nth-child(2) {
     display: none;
