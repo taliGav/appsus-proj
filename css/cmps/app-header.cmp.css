@@ -1,7 +1,8 @@
 .app-header {
-    padding: 10px;
+    height: 10vh;
     font-family: pegasus;
     font-size: 40px;
+    padding: 0 15px;
 }
 
 .app-header a {
