@@ -1,12 +1,11 @@
 export default {
-    props: ['note'],
+    props: ['info'],
     template: `
-        <section class="note-preview">
-            <div class="note-preview-details">
-                <h3>{{note.id}}</h3>
-                <h3>{{note.type}}</h3>
-                <h3>{{note.info.txt}}</h3>
-                <h4>{{note.isPinned}}</h4>
+        <section class="note-preview img-preview">
+            <div class="img-preview-details">
+                <h3>{{info.title}}</h3>
+                <img :src="info.url"  />
+                <!-- <img :src="imgUrl"  /> -->
             </div>
         </section>`,
     data() {
