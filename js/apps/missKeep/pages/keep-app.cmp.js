@@ -24,7 +24,7 @@ export default {
 
         <div class="notes-container flex">
             <div v-for="(note, idx) in notes">
-                <component :is="note.type"  :info="note.info" :id="note.id"></component>
+                <component :is="note.type"  :info="note.info" :id="note.id" @update="updateNote"></component>
                 <button @click="deleteNote(note.id)">X</button>
                 <!-- <router-link :to="'/keep/edit/'+note.id">Edit</router-link> -->
                 </div>
@@ -56,6 +56,13 @@ export default {
             });
     },
     methods: {
+        updateNote(id,title,txt){
+            console.log('id',id);
+            console.log('title',title);
+            console.log('txt',txt);
+            
+        },
+
         addNote() {
             this.newNote = noteService.getEmptyTxt();
         },
