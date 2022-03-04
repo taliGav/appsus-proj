@@ -8,7 +8,8 @@ export const noteService = {
     query,
     get,
     remove,
-    getEmptyTxt
+    getEmptyTxt,
+    post
     // addNote,
 }
 
@@ -19,8 +20,7 @@ function query() {
 function _createNotes() {
     let notes = utilService.loadFromStorage(NOTES_KEY);
     if (!notes || !notes.length) {
-        notes = {
-            cmps: [
+        notes = [
                 {
                     id: "n101",
                     type: "note-txt",
@@ -65,7 +65,7 @@ function _createNotes() {
                 //     }
                 // }
             ]
-        };
+        ;
         utilService.saveToStorage(NOTES_KEY, notes);
     }
     return notes;
@@ -85,13 +85,23 @@ function post(entityType, newEntity) {
 //     return storageService.remove(NOTES_KEY, noteId);
 // }
 
-function remove(NOTES_KEY, noteId) {
-    return query(NOTES_KEY)
-        .then(entities => {
-            const idx = entities.cmps.findIndex(entity => entity.id === noteId);
-            entities.cmps.splice(idx, 1)
-            localStorage.setItem(NOTES_KEY, JSON.stringify(entities))
-        })
+function remove(noteId) {
+    return storageService.remove(NOTES_KEY, noteId)
+}
+
+// function post(NOTES_KEY, newEntity) {
+//     newEntity.id = _makeId()
+//     return query(entityType)
+//         .then(entities => {
+//             entities.push(newEntity);
+//             _save(entityType, entities)
+//             return newEntity;
+//         })
+// }
+
+
+function save(NOTES_KEY, entities) {
+    localStorage.setItem(NOTES_KEY, JSON.stringify(entities))
 }
 
 function get(noteId) {
@@ -104,7 +114,7 @@ function getEmptyNoteGeneral(type) {
         id: '',
         type,
         isPinned: false,
-        info: null
+        info: {}
     };
 }
 

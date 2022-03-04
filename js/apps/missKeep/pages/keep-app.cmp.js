@@ -14,17 +14,20 @@ export default {
             <note-list v-if="notes" :notes="notes" />
         </section> -->
 
-        <section v-if="notes" class="note-cmps page-height flex">
-//        <label for="title"><input type="text" v-model="newNote.info.title" placeholder="Note Title"></label>
-//        <label for="note-text"><input type="text"  v-model="newNote.info.txt" placeholder="Note Text"></label>
-//        <button @click="addNote" >Save</button>
+        <section v-if="notes" class="note-cmps page-height">
+        <input v-if="newNote" type="text" v-model="newNote.info.title" placeholder="Note Title"></label>
+        <input  v-if="newNote" type="text"  v-model="newNote.info.txt" placeholder="Note Text"></label>
+        <button @click="saveNote" >Save</button>
+        
+        <input v-if="newNote" type="text" placeholder="newTxtPHolder">
+        <button class="add-note" @click="addNote">Add note</button>
 
-            <input v-if="newNote" type="text" placeholder="newTxtPHolder">
-            <button class="add-note" @click="addNote">Add note</button>
-            <div v-for="(cmp, idx) in notes.cmps">
-                <component :is="cmp.type"  :info="cmp.info"></component>
-                <button @click="deleteNote(cmp.id)">X</button>
+        <div class="notes-container flex">
+            <div v-for="(note, idx) in notes">
+                <component :is="note.type"  :info="note.info"></component>
+                <button @click="deleteNote(note.id)">X</button>
                 <!-- <router-link :to="'/keep/edit/'+note.id">Edit</router-link> -->
+                </div>
             </div>
             
         </section>
@@ -40,30 +43,40 @@ export default {
     data() {
         return {
             notes: null,
+            newNote: ''
+            // newNote: noteService.getEmptyTxt()
         };
     },
     created() {
-        console.log('hi');
         noteService.query()
-            .then(notes => {
-                this.notes = notes;
-                console.log(notes);
-                console.log(this.notes);
-            });
+        .then(notes => {
+            this.notes = notes;
+            console.log(notes);
+            console.log(this.notes);
+        });
     },
     methods: {
         addNote() {
-            const newNote = noteService.getEmptyTxt();
-            console.log('newNote', newNote);
+            console.log('addNote func is on...');
+            
+            this.newNote = noteService.getEmptyTxt();
+            console.log('newNote', this.newNote);
+        },
+
+        saveNote() {
+            console.log('saveNote func is on...')
+            console.log('note to save', this.newNote);
+
+
         },
 
         deleteNote(id) {
             console.log(id);
-            noteService.query();
+            // noteService.query();
             noteService.remove(id)
                 .then(() => {
-                    const idx = this.notes.cmps.findIndex((note) => note.id === id);
-                    this.notes.cmps.splice(idx, 1);
+                    const idx = this.notes.findIndex((note) => note.id === id);
+                    this.notes.splice(idx, 1);
                 })
                 .then(() => {
                     eventBus.emit('show-msg', { txt: 'note deleted', type: 'success' });
