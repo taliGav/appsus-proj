@@ -2,7 +2,7 @@ export default {
 
     props:['??'],
     template: `
-        <section class="appsus-app app-main">
+        <section class="appsus-app page-height">
             <!-- <book-filter @filtered="setFilter" />
             <book-list v-if="books" :books="booksToShow" @selected="selectBook" /> -->
             <!-- <book-details v-if="selectedBook" :book="selectedBook" @close="selectedBook = null" /> -->

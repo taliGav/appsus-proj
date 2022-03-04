@@ -2,7 +2,7 @@
 export default{
     prop:[],
     template:`    
-    <section class="about-page app-main">
+    <section class="about-page page-height">
     <h3>aboutttttttt</h3>
     </section>`,
     data(){

@@ -1,7 +1,7 @@
-.app-header{
-    height: 5vh,
-}
+/* pages-height */
 
-.app-footer{
-    height: 5vh
+.page-height {
+    min-height: 80vh;
+    background-color: rgb(191, 224, 204);
+    height: auto;
 }

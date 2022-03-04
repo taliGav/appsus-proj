@@ -4,7 +4,7 @@ export default {
 
     // props: ['email'],
     template: `
-        <section v-if="email" class="email-details">
+        <section v-if="email" class="email-details page-height">
             <p>{{email.from}}</p>
             <p>{{email.to}}</p>
             <p>{{email.sentAt}}</p>

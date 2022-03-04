@@ -14,7 +14,7 @@ export default {
             <note-list v-if="notes" :notes="notes" />
         </section> -->
 
-        <section v-if="notes" class="note-cmps app-main flex">
+        <section v-if="notes" class="note-cmps page-height flex">
             <input v-if="newNote" type="text" placeholder="newTxtPHolder">
             <button class="add-note" @click="addNote">Add note</button>
             <div v-for="(cmp, idx) in notes.cmps">
