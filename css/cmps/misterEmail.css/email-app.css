@@ -1,0 +1,39 @@
+/* .email-app{} */
+
+.email-app .newMail-link img {
+    width: 45px;
+    padding-bottom: 5px;
+}
+
+.email-app .newMail-link-btn {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+
+.email-app .newMail-link p {
+    font-family: pegasus;
+    font-size: 2rem;
+    margin: 5px;
+}
+
+.email-app .newMail-link {
+    text-decoration: none;
+}
+
+/* hover */
+
+.email-app .newMail-link-btn :last-child {
+    display: none
+}
+
+.email-app .newMail-link-btn:hover :last-child {
+    display: block
+}
+
+.email-app .newMail-link-btn:hover :nth-child(2) {
+    display: none
+}

@@ -1,28 +1,40 @@
 /* SETUP */
 
-@import 'setup/vars.css';
-@import 'setup/typography.css';
+@import './setup/vars.css';
+@import './setup/typography.css';
 
 /* BASE */
 
-@import 'basic/base.css';
-@import 'basic/layout.css';
-@import 'basic/helpers.css';
+@import './basic/base.css';
+@import './basic/layout.css';
+@import './basic/helpers.css';
 
 /* COMPONENTS */
+/* ////////// */
 
-@import 'cmps/app-header.cmp.css';
-@import 'cmps/app-footer.cmp.css';
-@import 'cmps/user-msg.cmp.css';
+/* APPSUS */
 
-/* mq */
+@import './cmps/appsus.css/app-header.cmp.css';
+@import './cmps/appsus.css/app-footer.cmp.css';
+@import './cmps/appsus.css/user-msg.cmp.css';
 
-@import 'basic/mq.css';
+/* MISTER EMAIL */
+
+@import './cmps/misterEmail.css/email-app.css';
+@import './cmps/misterEmail.css/email-compose.css';
+@import './cmps/misterEmail.css/email-details.css';
+@import './cmps/misterEmail.css/email-list.css';
+@import './cmps/misterEmail.css/email-filter.css';
+@import './cmps/misterEmail.css/email-preview.css';
 
 /* MISS BOOK */
 
-@import './miss-book-style.css';
+@import './cmps/missBook.css/miss-book-style.css';
 
 /* KEEP NOTES */
 
-@import './keep-notes.css';
+@import './cmps/missKeep.css/keep-notes.css';
+
+/* mq */
+
+@import './basic/mq.css';
