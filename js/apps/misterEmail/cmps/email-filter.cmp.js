@@ -2,9 +2,7 @@ export default {
 
     template: `
         <section class="email-filter">
-            <label>
-                <input @input="setFilter" type="text" v-model="filterBy.textFilterd" placeholder="Search">
-            </label>
+                <input @input="setFilter" type="text" v-model="filterBy.textFilterd" placeholder="🔍 Search">
         </section>
         `,
     data() {
