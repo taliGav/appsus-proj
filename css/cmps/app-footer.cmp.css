@@ -1,6 +1,5 @@
 .app-footer {
-    margin: 10px;
-    height: 10px;
+    height: 10vh;
     font-family: pegasus;
     flex-direction: column;
     align-items: center;
@@ -8,6 +7,10 @@
 
 .app-footer a {
     text-decoration: none;
+}
+
+.app-footer .logo{
+    margin: 10px;
 }
 
 .app-footer .logo img {
@@ -21,5 +24,5 @@
 
 .app-footer small {
     font-size: 20px;
-    margin: 0;
+    margin: 10px;
 }
