@@ -13,3 +13,10 @@ function emit(eventName, data) {
 }
 
 export const eventBus = { on, emit };
+
+export function showErrorMsg(txt) {
+    eventBus.emit('show-msg', { txt, type: 'error' });
+}
+export function showSuccessMsg(txt) {
+    eventBus.emit('show-msg', { txt, type: 'success' });
+}
