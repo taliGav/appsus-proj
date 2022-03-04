@@ -6,7 +6,7 @@ export default {
                 <img src="./css/img/pagsus-clr.png" alt="logo">
             </router-link>
             <nav class="nav-bar">
-                <router-link  to="/keep"class="keep-link">
+                <router-link  to="/keep" class="keep-link">
                     <img src="./css/img/keep-bw.png" alt="logo">
                         <img src="./css/img/keep-clr.png" alt="logo">
                         <h4>
