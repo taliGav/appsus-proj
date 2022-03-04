@@ -56,8 +56,9 @@ export default {
             this.emails.push(email);
         },
         changeToggle(email, info) {
-            if (info === 'star') email.stared = !email.stared;
+            if (info === 'star') email.isStared = !email.isStared;
             else if (info === 'read') email.isRead = !email.isRead;
+            else if (info === 'checked') email.isChecked = !email.isChecked;
             emailService.save(email);
         }
     },

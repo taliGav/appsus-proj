@@ -25,41 +25,46 @@ function _createEmails() {
             subject: 'Miss you!',
             body: 'Would love to catch up sometimes',
             isRead: false,
+            isChecked: false,
             sentAt: +new Date() - 3600,
             to: 'momo@mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmomo.com',
-            stared: false,
+            isStared: false,
         }, {
             id: 'e102',
             subject: 'spam!',
             body: 'githubbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb',
             isRead: false,
+            isChecked: false,
             sentAt: +new Date() - 3600 * 10,
             to: 'mimi@mimi.com',
-            stared: false,
+            isStared: false,
         }, {
             id: 'e103',
             subject: 'hiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii!',
             body: 'alaska',
             isRead: false,
+            isChecked: false,
             sentAt: 1645989216000,
             to: 'mama@mama.com',
-            stared: false
+            isStared: false
         }, {
             id: 'e104',
             subject: 'coco!',
             body: 'coco jambo',
             isRead: false,
+            isChecked: false,
             sentAt: 1646162016000,
             to: 'mumu@mumu.com',
-            stared: false,
+            isStared: false,
         }, {
             id: 'e105',
             subject: 'bye!',
             body: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
             isRead: false,
+            isChecked: false,
             sentAt: 747945115000,
             to: 'mlml@mlml.com',
-            stared: false,
+            isStared: false,
         }
         ];
         utilService.saveToStorage(EMAILS_KEY, emails);
