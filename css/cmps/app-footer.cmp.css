@@ -1,13 +1,9 @@
 .app-footer {
-    height: 10vh;
+    margin: 10px;
+    height: 10px;
     font-family: pegasus;
-    font-size: 40px;
-    padding: 10px 15px;
-    display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0;
-    justify-content: center;
 }
 
 .app-footer a {
