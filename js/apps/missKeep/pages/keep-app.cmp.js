@@ -24,7 +24,7 @@ export default {
 
         <div class="notes-container flex">
             <div v-for="(note, idx) in notes">
-                <component :is="note.type"  :info="note.info"></component>
+                <component :is="note.type"  :info="note.info" :id="note.id"></component>
                 <button @click="deleteNote(note.id)">X</button>
                 <!-- <router-link :to="'/keep/edit/'+note.id">Edit</router-link> -->
                 </div>
@@ -49,30 +49,32 @@ export default {
     },
     created() {
         noteService.query()
-        .then(notes => {
-            this.notes = notes;
-            console.log(notes);
-            console.log(this.notes);
-        });
+            .then(notes => {
+                this.notes = notes;
+                console.log(notes);
+                console.log(this.notes);
+            });
     },
     methods: {
         addNote() {
-            console.log('addNote func is on...');
-            
             this.newNote = noteService.getEmptyTxt();
-            console.log('newNote', this.newNote);
         },
 
         saveNote() {
-            console.log('saveNote func is on...')
-            console.log('note to save', this.newNote);
+            // console.log('saveNote func is on...');
+            // console.log('note to save', this.newNote);
 
-
+            noteService.save(this.newNote)
+                .then(() => eventBus.emit('show-msg', { txt: 'Saved succesfully', type: 'success' }))
+            // console.log('notes', this.notes);
+            this.notes.push(this.newNote)
+            // console.log('notes after push', this.notes);
+            this.newNote = noteService.getEmptyTxt();
         },
+
 
         deleteNote(id) {
             console.log(id);
-            // noteService.query();
             noteService.remove(id)
                 .then(() => {
                     const idx = this.notes.findIndex((note) => note.id === id);

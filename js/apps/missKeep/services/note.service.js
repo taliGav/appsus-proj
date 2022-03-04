@@ -9,7 +9,8 @@ export const noteService = {
     get,
     remove,
     getEmptyTxt,
-    post
+    post,
+    save
     // addNote,
 }
 
@@ -99,10 +100,14 @@ function remove(noteId) {
 //         })
 // }
 
-
-function save(NOTES_KEY, entities) {
-    localStorage.setItem(NOTES_KEY, JSON.stringify(entities))
+function save(note) {
+    if (note.id) return storageService.put(NOTES_KEY, note);
+    else return storageService.post(NOTES_KEY, note);
 }
+ 
+// function save(NOTES_KEY, entities) {
+//     localStorage.setItem(NOTES_KEY, JSON.stringify(entities))
+// }
 
 function get(noteId) {
     console.log('noteId is:', noteId); 
