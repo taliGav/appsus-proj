@@ -7,8 +7,9 @@ _createNotes();
 export const noteService = {
     query,
     get,
+    remove
     // addNote,
-};
+}
 
 function query() {
     return storageService.query(NOTES_KEY);
@@ -79,6 +80,18 @@ function post(entityType, newEntity) {
         })
 }
 
+// function remove(noteId) {
+//     return storageService.remove(NOTES_KEY, noteId);
+// }
+
+function remove(NOTES_KEY, noteId) {
+    return query(NOTES_KEY)
+        .then(entities => {
+            const idx = entities.cmps.findIndex(entity => entity.id === noteId);
+            entities.cmps.splice(idx, 1)
+            localStorage.setItem(NOTES_KEY, JSON.stringify(entities))
+        })
+}
 
 function get(noteId) {
     console.log('noteId is:', noteId); 
