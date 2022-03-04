@@ -5,7 +5,7 @@ import { bookService } from "../service/books-service.js";
 
 export default {
     template: `
-    <section v-if="book" class="book-details app-main">
+    <section v-if="book" class="book-details page-height">
         <div  class="book-details-exspand">
             <img :src="book.thumbnail" alt="book cover">
             <div v-if="book.listPrice.isOnSale" id="trapezoid"> SALE!</div>

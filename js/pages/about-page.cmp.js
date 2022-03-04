@@ -2,7 +2,7 @@ export default {
 
     props: ['??'],
     template: `
-            <section class="about-page app-main">
+            <section class="about-page page-height">
             </section>
 `,
     data() {

@@ -5,7 +5,7 @@ import bookDetails from "./book-details.cmp.js";
 
 export default {
     template: `
-    <section class="book-app app-main">
+    <section class="book-app page-height">
     <book-filter @filtered="setFilter"/>  
     <book-list v-if="books" :books="booksForShow" @selected="selectBook"/>
     <!-- <book-details v-if="selectedBook" :book="selectedBook" @close="selectedBook=null"/> -->

@@ -8,7 +8,7 @@ import emailCompose from "./email-compose.cmp.js";
 
 export default {
     template: `
-        <section class="email-app">
+        <section class="email-app page-height">
             <router-link to="/email/compose" v-if="emailsForDisplay" @send="sendMail">new email</router-link>
             <email-filter v-if="emailsForDisplay" @filtered="setFilter"/>
             <email-list v-if="emailsForDisplay" :emails="emailsForDisplay" @remove="deleteEmail" @select="selectEmail" @toggleInfo="changeToggle"/>

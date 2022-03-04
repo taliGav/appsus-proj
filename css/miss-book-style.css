@@ -6,16 +6,6 @@ body, h1, h2, h3, h4, h5, h6, p, ul {
     margin: 0;
 }
 
-.app-main {
-    height: 90vh;
-    background-color: rgb(191, 224, 204);
-}
-
-.book-app {
-    min-height: 90vh;
-    height: auto;
-}
-
 /* book-list */
 
 .book-list ul {
@@ -103,8 +93,6 @@ body, h1, h2, h3, h4, h5, h6, p, ul {
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 90vh;
-    height: auto;
 }
 
 .book-details-exspand {

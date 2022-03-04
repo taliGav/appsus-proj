@@ -2,7 +2,7 @@ import { emailService } from "../service/email-service.service.js";
 
 export default {
     template: `
-        <section class="email-compose">
+        <section class="email-compose page-height">
             <router-link to="/email">Return</router-link>
         <h2>add mail</h2>
         <form @submit.prevent="send">

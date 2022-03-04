@@ -12,6 +12,7 @@
 /* COMPONENTS */
 
 @import 'cmps/app-header.cmp.css';
+@import 'cmps/app-footer.cmp.css';
 @import 'cmps/user-msg.cmp.css';
 
 /* mq */
