@@ -15,6 +15,10 @@ export default {
         </section> -->
 
         <section v-if="notes" class="note-cmps page-height flex">
+//        <label for="title"><input type="text" v-model="newNote.info.title" placeholder="Note Title"></label>
+//        <label for="note-text"><input type="text"  v-model="newNote.info.txt" placeholder="Note Text"></label>
+//        <button @click="addNote" >Save</button>
+
             <input v-if="newNote" type="text" placeholder="newTxtPHolder">
             <button class="add-note" @click="addNote">Add note</button>
             <div v-for="(cmp, idx) in notes.cmps">
@@ -50,7 +54,7 @@ export default {
     methods: {
         addNote() {
             const newNote = noteService.getEmptyTxt();
-            console.log('newNote' ,newNote );
+            console.log('newNote', newNote);
         },
 
         deleteNote(id) {
