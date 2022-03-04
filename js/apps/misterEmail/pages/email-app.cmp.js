@@ -17,21 +17,21 @@ export default {
                 </button>
             </router-link>
             <email-filter v-if="emailsForDisplay" @filtered="setFilter"/>
-            <email-list v-if="emailsForDisplay" :emails="emailsForDisplay" @remove="deleteEmail" @select="selectEmail" @toggleInfo="changeToggle"/>
-            <email-details v-if="selectedEmail" :email="selectedEmail" @close="selectedEmail = null"/>
+            <email-list v-if="emailsForDisplay" :emails="emailsForDisplay" @remove="deleteEmail" @toggleInfo="changeToggle"/>
+            <!-- <email-details v-if="selectedEmail" :email="selectedEmail" @close="selectedEmail = null" /> -->
         </section>
         `,
     data() {
         return {
             emails: null,
-            selectedEmail: null,
+            // selectedEmail: null,
             filterBy: null
         };
     },
     components: {
         emailFilter,
         emailList,
-        emailDetails,
+        // emailDetails,
         emailCompose,
     },
     created() {
@@ -49,9 +49,9 @@ export default {
                     this.emails.splice(idx, 1);
                 });
         },
-        selectEmail(email) {
-            this.selectedEmail = email;
-        },
+        // selectEmail(email) {
+        //     this.selectedEmail = email;
+        // },
         sendMail(email) {
             this.emails.push(email);
         },

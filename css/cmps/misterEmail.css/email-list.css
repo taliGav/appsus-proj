@@ -2,6 +2,6 @@
     list-style: none;
 }
 
-.email-list li>* {
-    display: inline-block;
+.email-list .actions {
+    display: inline-flex;
 }

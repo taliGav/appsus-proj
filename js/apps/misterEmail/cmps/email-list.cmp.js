@@ -5,14 +5,15 @@ export default {
     template: `
         <section class="email-list">
             <ul>
-                <li v-for="email in emails" :key="email.id">
-                    <email-preview v-if="email" :email="email"/>
+                <li v-for="email in emails" :key="email.id" >
+                    <router-link class="email-preview-link" :to="'/email/'+email.id" >
+                        <email-preview v-if="email" :email="email"/>
+                    </router-link>
                     <div class="actions">
                         <input type="checkbox">
-                        <button @click="toggle(email,'star')">⭐</button>
+                        <button @click.stop="toggle(email,'star')">⭐</button>
                         <button @click="deleteEmail(email.id)">🗑️</button>
                         <button @click="toggle(email,'read')">👁️</button>
-                        <router-link :to="'/email/'+email.id">Details</router-link>
                     </div>
                 </li>
             </ul>
