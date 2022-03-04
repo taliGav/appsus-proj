@@ -2,5 +2,9 @@
     background-color: azure;
     border-radius: 8px;
     margin: 10px;
+    padding: 10px;
 }
 
+.note-title{
+padding-bottom: 10px;
+}
