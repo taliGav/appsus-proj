@@ -7,7 +7,8 @@ _createNotes();
 export const noteService = {
     query,
     get,
-    remove
+    remove,
+    getEmptyTxt
     // addNote,
 }
 
@@ -107,6 +108,18 @@ function getEmptyNoteGeneral(type) {
     };
 }
 
+function getEmptyTxt() {
+    return {
+        id: '',
+        type: "note-txt",
+        isPinned: false,
+        info: {
+            title:'',
+            txt: ''
+        }    };
+}
+
+
 function _createNote(type) {
     const note = getEmptyNoteGeneral(type);
     note.id = utilService.makeId();
@@ -132,14 +145,6 @@ function getEmptyImg(vendor = '', maxSpeed = 0) {
     };
 }
 function getEmptyTodos(vendor = '', maxSpeed = 0) {
-    return {
-        id: '',
-        vendor,
-        maxSpeed,
-        prevOwners: []
-    };
-}
-function getEmptyTxt(vendor = '', maxSpeed = 0) {
     return {
         id: '',
         vendor,

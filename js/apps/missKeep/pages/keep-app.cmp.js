@@ -15,6 +15,8 @@ export default {
         </section> -->
 
         <section v-if="notes" class="note-cmps app-main flex">
+            <input v-if="newNote" type="text" placeholder="newTxtPHolder">
+            <button class="add-note" @click="addNote">Add note</button>
             <div v-for="(cmp, idx) in notes.cmps">
                 <component :is="cmp.type"  :info="cmp.info"></component>
                 <button @click="deleteNote(cmp.id)">X</button>
@@ -46,9 +48,14 @@ export default {
             });
     },
     methods: {
+        addNote() {
+            const newNote = noteService.getEmptyTxt();
+            console.log('newNote' ,newNote );
+        },
+
         deleteNote(id) {
             console.log(id);
-            noteService.query()
+            noteService.query();
             noteService.remove(id)
                 .then(() => {
                     const idx = this.notes.cmps.findIndex((note) => note.id === id);
@@ -60,9 +67,17 @@ export default {
                 .catch(err => {
                     console.error(err);
                     eventBus.emit('show-msg', { txt: 'Error - please try again later', type: 'error' });
-});
+                });
         },
         computed: {
         }
     }
-}
+};
+
+
+
+// <div class="new-note flex space-between">
+//        <label for="title"><input type="text" v-model="newNote.info.title" placeholder="Note Title"></label>
+//        <label for="note-text"><input type="text"  v-model="newNote.info.txt" placeholder="Note Text"></label>
+//        <button @click="addNote" >Save</button>
+//           </div>
