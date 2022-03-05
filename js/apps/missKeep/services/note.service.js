@@ -54,6 +54,17 @@ function _createNotes() {
                         backgroundColor: "#00d"
                     }
                 },
+                {
+                    id: "n104",
+                    type: "note-video",
+                    info: {
+                        url: "https://www.youtube.com/watch?v=UqyT8IEBkvY",
+                        title: "24K MAGIC"
+                    },
+                    style: {
+                        backgroundColor: "#00d"
+                    }
+                },
                 // {
                 //     id: "n103",
                 //     type: "note-todos",

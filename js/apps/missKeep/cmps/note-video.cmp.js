@@ -4,7 +4,8 @@ export default {
         <section class="note-preview img-preview">
             <div class="img-preview-details">
                 <h3>{{info.title}}</h3>
-                <img :src="info.url"  />
+                <img class="video" width="400" height="300" :src="info.url">
+                <img class="video" width="400" height="300" :src="https://www.youtube.com/embed/${this.info.url}">
                 <!-- <img :src="imgUrl"  /> -->
             </div>
         </section>`,
@@ -16,17 +17,6 @@ export default {
     computed: {}
 }
 
-// {
-//     id: "n102",
-//     type: "note-video",
-//     info: {
-//     url: "http://some-img/me",
-//     title: "Bobi and Me"
-//     },
-//     style: {
-//     backgroundColor: "#00d"
-//     }
-//    },
 
 
 // function renderVideo(videos) {

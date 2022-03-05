@@ -12,14 +12,14 @@ export default {
     template: `
         <section v-if="notes" class="note-cmps page-height">
             <div class="add-note-container flex">
-                <input v-if="newNote" type="text" v-model="newNote.info.title" placeholder="Note Title"></label>
-                <input  v-if="newNote" type="text"  v-model="newNote.info.txt" placeholder="Note Text"></label>
+                <input v-if="newNote" type="text" v-model="newNote.info.title" placeholder="Note Title">
+                <input  v-if="newNote" type="text"  v-model="newNote.info.txt" placeholder="Note Text">
                 <button  v-if="newNote" @click="saveNote" >Save</button>
                 <!-- <input v-if="newNote" type="text" placeholder="newTxtPHolder"> -->
                 <button class="add-note" @click="addNote">Add note</button>
             </div>
 
-            <div class="notes-container flex">
+            <div class="notes-container flex space-between wrap">
                 <div v-for="(note, idx) in notes">
                 <component :is="note.type"  :info="note.info" :id="note.id" @update="updateNote"></component>
                 <button @click="deleteNote(note.id)">X</button>
@@ -68,8 +68,7 @@ export default {
                 console.log(this.notes[idx]);
                 console.log(this.notes);
                 noteService.save(this.notes[idx]);
-            }).then(() => eventBus.emit('show-msg', { txt: 'Updated succesfully', type: 'success' }));
-
+            }).then(() => eventBus.emit('show-msg', { txt: 'Updated successfully', type: 'success' }));
         },
 
         addNote() {
@@ -78,14 +77,12 @@ export default {
 
         saveNote() {
             noteService.save(this.newNote)
-                .then(() => eventBus.emit('show-msg', { txt: 'Saved succesfully', type: 'success' }));
+                .then(() => eventBus.emit('show-msg', { txt: 'Saved successfully', type: 'success' }));
             this.notes.push(this.newNote);
             this.newNote = noteService.getEmptyTxt();
         },
 
-
         deleteNote(id) {
-            console.log(id);
             noteService.remove(id)
                 .then(() => {
                     const idx = this.notes.findIndex((note) => note.id === id);
@@ -99,8 +96,6 @@ export default {
                     eventBus.emit('show-msg', { txt: 'Error - please try again later', type: 'error' });
                 });
         },
-        computed: {
-        }
     }
 };
 

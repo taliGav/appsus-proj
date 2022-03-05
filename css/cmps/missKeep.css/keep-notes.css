@@ -3,7 +3,11 @@
 }
 
 .notes-container{
-    margin: 30px 80px;
+    margin: 30px 120px;
+}
+.notes-container>*{
+    flex-grow: 1;
+    min-width: 230px;
 }
 
 .note-preview {
@@ -11,6 +15,10 @@
     border-radius: 8px;
     margin: 10px;
     padding: 10px;
+    max-width: 270px;
+}
+.note-preview .img {
+    max-width: 250px;
 }
 
 .note-title{
