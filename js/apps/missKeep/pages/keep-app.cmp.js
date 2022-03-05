@@ -20,9 +20,9 @@ export default {
             </div>
 
             <div class="notes-container flex space-between wrap">
-                <div v-for="(note, idx) in notes">
-                <component :is="note.type"  :info="note.info" :id="note.id" @update="updateNote"></component>
-                <button @click="deleteNote(note.id)">X</button>
+                <div class="note-container" v-for="(note, idx) in notes">
+                <component :is="note.type"  :info="note.info" :id="note.id" @update="updateNote" @delete="deleteNote"></component>
+                <!-- <button @click="deleteNote(note.id)">X</button> -->
                 <!-- <router-link :to="'/keep/edit/'+note.id">Edit</router-link> -->
                 </div>
             </div>

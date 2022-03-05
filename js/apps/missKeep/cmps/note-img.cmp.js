@@ -1,30 +1,34 @@
 export default {
-    props: ['info'],
+    props: ['info', 'id'],
     template: `
         <section class="note-preview img-preview">
             <div class="img-preview-details">
-                <h3 class="note-title" @keyup="update" contenteditable="true">{{info.title}}</h3>
+                <h3>{{info.title}}</h3>
+                <!-- <h3 class="note-title" @keyup="update" contenteditable="true">{{info.title}}</h3> -->
                 <img :src="info.url"  />
-                <!-- <img :src="imgUrl"  /> -->
+                <button @click="deleteCurrNote(id)">X</button>
+
             </div>
         </section>`,
     data() {
         return {
-            newTitle: ''
+            // newTitle: this.info.title,
         };
     },
     methods: {},
+    created() {
+        console.log(this.info);
+    },
     computed: {
-        update(ev) {
-            if (ev.path[0].localName === 'h3') this.newTitle = ev.currentTarget.textContent;
-            this.$emit('update', this.id, this.newTitle);
-            },
-
-        // imgUrl() {
-        //     return this.info.url;
-        // },
-
+        deleteCurrNote() {
+            this.$emit('delete', this.id);
+        }
     }
+
+    // update(ev) {
+    //     this.newTitle = ev.currentTarget.textContent;
+    //     this.$emit('update', this.id, this.newTitle);
+    //     }
 }
 
 // {

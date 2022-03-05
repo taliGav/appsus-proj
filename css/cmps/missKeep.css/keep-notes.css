@@ -5,6 +5,11 @@
 .notes-container{
     margin: 30px 120px;
 }
+
+.note-container{
+padding: auto;
+}
+
 .notes-container>*{
     flex-grow: 1;
     min-width: 230px;
@@ -15,10 +20,10 @@
     border-radius: 8px;
     margin: 10px;
     padding: 10px;
-    max-width: 270px;
+    max-width: 400px;
 }
-.note-preview .img {
-    max-width: 250px;
+.note-preview img {
+    max-width: 350px;
 }
 
 .note-title{

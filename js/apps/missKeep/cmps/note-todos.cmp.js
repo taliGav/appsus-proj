@@ -1,5 +1,5 @@
 export default {
-    props: ['info'],
+    props: ['info', 'id'],
     template: `
         <section class="note-preview">
             <div class="note-preview-details">
@@ -7,6 +7,7 @@ export default {
                 <h3>{{note.type}}</h3>
                 <h3>{{note.info.txt}}</h3>
                 <h4>{{note.isPinned}}</h4>
+                <button @click="deleteCurrNote(id)">X</button>
             </div>
         </section>`,
     data() {
@@ -14,7 +15,11 @@ export default {
         };
     },
     methods: {},
-    computed: {}
+    computed: {
+        deleteCurrNote() {
+            this.$emit('delete', this.id);
+        }
+    }
 }
 
 //    {

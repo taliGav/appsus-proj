@@ -1,12 +1,15 @@
 export default {
-    props: ['info'],
+    props: ['info', 'id'],
     template: `
         <section class="note-preview img-preview">
             <div class="img-preview-details">
                 <h3>{{info.title}}</h3>
-                <img class="video" :src="info.url">
-                <!-- <img class="video" width="400" height="300" :src="info.url"> -->
+                <!-- <img class="video" :src="info.url"> -->
+                <!-- <iframe class="video" width="373" height="210" :src="info.url" /> -->
+                <iframe width="373" height="210" src="https://www.youtube.com/embed/1FzEaIbqW3c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>                
                 <!-- <img :src="imgUrl"  /> -->
+                <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/UqyT8IEBkvY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+                <button @click="deleteCurrNote(id)">X</button>
             </div>
         </section>`,
     data() {
@@ -14,7 +17,11 @@ export default {
         };
     },
     methods: {},
-    computed: {}
+    computed: {
+        deleteCurrNote() {
+            this.$emit('delete', this.id);
+        }
+    }
 }
 
 

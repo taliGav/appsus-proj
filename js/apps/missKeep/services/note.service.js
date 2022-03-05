@@ -65,6 +65,18 @@ function _createNotes() {
                         backgroundColor: "#00d"
                     }
                 },
+                {
+                    id: "n105",
+                    type: "note-img",
+                    info: {
+                        url: "https://cdn.vox-cdn.com/thumbor/G_Ts5lMSVPW3grBjSZ924gvyg-s=/0x0:666x444/1200x800/filters:focal(266x140:372x246)/cdn.vox-cdn.com/uploads/chorus_image/image/59491841/Macaca_nigra_self-portrait__rotated_and_cropped_.0.jpg",
+                        title: "Bobi and Me"
+                    },
+                    style: {
+                        backgroundColor: "#00d"
+                    }
+                },
+
                 // {
                 //     id: "n103",
                 //     type: "note-todos",
