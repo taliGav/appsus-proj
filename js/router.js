@@ -1,10 +1,18 @@
+// APPSUS
 import appsusApp from './pages/appsus-app.cmp.js';
 import homePage from './pages/home-page.cmp.js';
+// ABOUT
 import aboutPage from './pages/about-page.cmp.js';
-import keepApp from './apps/missKeep/pages/keep-app.cmp.js';
+// EMAIL
 import emailApp from './apps/misterEmail/pages/email-app.cmp.js';
 import emailCompose from './apps/misterEmail/pages/email-compose.cmp.js';
 import emailDetails from './apps/misterEmail/pages/email-details.cmp.js';
+import emailSent from './apps/misterEmail/pages/email-sent.cmp.js';
+import emaildDrafts from './apps/misterEmail/pages/email-drafts.cmp.js';
+import emailTrash from './apps/misterEmail/pages/email-trash.cmp.js';
+// KEEP
+import keepApp from './apps/missKeep/pages/keep-app.cmp.js';
+// BOOKS
 import bookApp from './apps/missBook/pages/book-app.cmp.js';
 import bookDetails from './apps/missBook/pages/book-details.cmp.js';
 
@@ -26,8 +34,26 @@ const routes = [
         component: keepApp
     },
     {
-        path: '/email',
-        component: emailApp
+        path: '/email/inbox',
+        component: emailApp,
+        children: [
+            {
+                path: 'inbox',
+                component: emailApp
+            },
+            {
+                path: 'sent',
+                component: emailSent
+            },
+            {
+                path: 'drafts',
+                component: emaildDrafts
+            },
+            {
+                path: 'trash',
+                component: emailTrash
+            },
+        ]
     },
     {
         path: '/email/compose',
@@ -35,7 +61,7 @@ const routes = [
     },
     {
         path: '/email/:emailId',
-        component: emailDetails
+        component: emailDetails,
     },
     {
         path: '/book',

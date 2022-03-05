@@ -7,7 +7,7 @@ export default {
             <p>{{email.sentAt}}</p>
             <p>{{email.subject}}</p>
             <p>{{email.body}}</p>
-            <router-link to="/email">Return</router-link>
+            <router-link to="/email/inbox">Return</router-link>
         </section>
         `,
     data() {
