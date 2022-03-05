@@ -3,7 +3,7 @@ export default {
     template: `
         <section class="note-preview">
             <div class="note-preview-details">
-                <h3>{{note.id}}</h3>
+            <h3 class="note-title" @keyup="update" contenteditable="true">{{info.title}}</h3>
                 <h3>{{note.type}}</h3>
                 <h3>{{note.info.txt}}</h3>
                 <h4>{{note.isPinned}}</h4>

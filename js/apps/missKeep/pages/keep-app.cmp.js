@@ -10,7 +10,7 @@ import userMsg from "./../../../cmps/reusable-cmps/user-msg.cmp.js";
 
 export default {
     template: `
-        <section v-if="notes" class="note-cmps page-height">
+        <section v-if="notes" class="page-height note-cmps">
             <div class="add-note-container flex">
                 <input v-if="newNote" type="text" v-model="newNote.info.title" placeholder="Note Title">
                 <input  v-if="newNote" type="text"  v-model="newNote.info.txt" placeholder="Note Text">
@@ -20,10 +20,12 @@ export default {
             </div>
 
             <div class="notes-container flex space-between wrap">
-                <div class="note-container" v-for="(note, idx) in notes">
+                <div class="note-container flex column space-between" v-for="(note, idx) in notes">
                 <component :is="note.type"  :info="note.info" :id="note.id" @update="updateNote" @delete="deleteNote"></component>
-                <!-- <button @click="deleteNote(note.id)">X</button> -->
                 <!-- <router-link :to="'/keep/edit/'+note.id">Edit</router-link> -->
+                <command-panel class="command-panel-container flex space-between">
+                <button @click="deleteNote(note.id)">X</button>
+                </command-panel>
                 </div>
             </div>
             
