@@ -1,21 +1,17 @@
 import { emailService } from "../service/email-service.service.js";
 import emailFilter from "../cmps/email-filter.cmp.js";
 import emailList from "../cmps/email-list.cmp.js";
-import emailDetails from "./email-details.cmp.js";
-import emailCompose from "./email-compose.cmp.js";
+import emailFolderList from "../cmps/email-folder-list.cmp.js";
+// import emailDetails from "./email-details.cmp.js";
+// import emailCompose from "./email-compose.cmp.js";
 
 
 
 export default {
     template: `
         <section class="email-app page-height">
-            <router-link class="newMail-link" to="/email/compose" v-if="emailsForDisplay" @send="sendMail">
-                <button class="newMail-link-btn">
-                    <p>New mail</p>        
-                    <img  src="./css/img/writing-bw.png" alt="">
-                    <img  src="./css/img/writing-clr.png" alt="">
-                </button>
-            </router-link>
+        
+            <email-folder-list/>
             <email-filter v-if="emailsForDisplay" @filtered="setFilter"/>
             <email-list v-if="emailsForDisplay" :emails="emailsForDisplay" @remove="deleteEmail" @toggleInfo="changeToggle"/>
             <!-- <email-details v-if="selectedEmail" :email="selectedEmail" @close="selectedEmail = null" /> -->
@@ -32,7 +28,8 @@ export default {
         emailFilter,
         emailList,
         // emailDetails,
-        emailCompose,
+        // emailCompose,
+        emailFolderList
     },
     created() {
         emailService.query()
@@ -66,7 +63,7 @@ export default {
         emailsForDisplay() {
             if (!this.filterBy) return this.emails;
             const regex = new RegExp(this.filterBy.textFilterd, 'i');
-            return this.emails.filter(email => regex.test(email.body) || regex.test(email.subject));
+            return this.emails.filter(email => regex.test(email.body) || regex.test(email.subject) || regex.test(email.to));
         }
     },
 };

@@ -22,49 +22,54 @@ function _createEmails() {
     if (!emails || !emails.length) {
         emails = [{
             id: 'e101',
+            to: 'momo@mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmomo.com',
             subject: 'Miss you!',
             body: 'Would love to catch up sometimes',
-            isRead: false,
-            isChecked: false,
             sentAt: +new Date() - 3600,
-            to: 'momo@mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmomo.com',
+            isChecked: false,
+            isRead: false,
             isStared: false,
+            status: 'Recived'
         }, {
             id: 'e102',
+            to: 'mimi@mimi.com',
             subject: 'spam!',
             body: 'githubbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb',
-            isRead: false,
-            isChecked: false,
             sentAt: +new Date() - 3600 * 10,
-            to: 'mimi@mimi.com',
+            isChecked: false,
+            isRead: false,
             isStared: false,
+            status: 'Recived'
         }, {
             id: 'e103',
+            to: 'mama@mama.com',
             subject: 'hiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii!',
             body: 'alaska',
-            isRead: false,
-            isChecked: false,
             sentAt: 1645989216000,
-            to: 'mama@mama.com',
-            isStared: false
+            isChecked: false,
+            isRead: false,
+            isStared: false,
+            status: 'Recived'
         }, {
             id: 'e104',
+            to: 'mumu@mumu.com',
             subject: 'coco!',
             body: 'coco jambo',
-            isRead: false,
-            isChecked: false,
             sentAt: 1646162016000,
-            to: 'mumu@mumu.com',
+            isChecked: false,
+            isRead: false,
             isStared: false,
+            status: 'Recived',
         }, {
             id: 'e105',
+            to: 'mlml@mlml.com',
             subject: 'bye!',
             body: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-            isRead: false,
-            isChecked: false,
             sentAt: 747945115000,
-            to: 'mlml@mlml.com',
+            isChecked: false,
+            isRead: false,
             isStared: false,
+            status: 'Recived',
         }
         ];
         utilService.saveToStorage(EMAILS_KEY, emails);
