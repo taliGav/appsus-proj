@@ -29,7 +29,7 @@ function _createEmails() {
             isChecked: false,
             isRead: false,
             isStared: false,
-            status: 'Recived'
+            status:'Recived'
         }, {
             id: 'e102',
             to: 'mimi@mimi.com',
@@ -39,7 +39,7 @@ function _createEmails() {
             isChecked: false,
             isRead: false,
             isStared: false,
-            status: 'Recived'
+            status:'Recived'
         }, {
             id: 'e103',
             to: 'mama@mama.com',
@@ -49,7 +49,7 @@ function _createEmails() {
             isChecked: false,
             isRead: false,
             isStared: false,
-            status: 'Recived'
+            status:'Sent'
         }, {
             id: 'e104',
             to: 'mumu@mumu.com',
@@ -59,7 +59,7 @@ function _createEmails() {
             isChecked: false,
             isRead: false,
             isStared: false,
-            status: 'Recived',
+            status:'Recived',
         }, {
             id: 'e105',
             to: 'mlml@mlml.com',
@@ -69,9 +69,9 @@ function _createEmails() {
             isChecked: false,
             isRead: false,
             isStared: false,
-            status: 'Recived',
+            status:'Recived',
         }
-        ];
+    ];
         utilService.saveToStorage(EMAILS_KEY, emails);
     }
     return emails;

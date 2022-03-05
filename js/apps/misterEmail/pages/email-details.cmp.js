@@ -18,7 +18,6 @@ export default {
     components: {
     },
     created() {
-        console.log('this.$route is:', this.$route);
         const id = this.$route.params.emailId;
         emailService.get(id)
             .then(email => {

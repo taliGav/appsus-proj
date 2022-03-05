@@ -9,7 +9,7 @@ export default {
             <input type="text" v-model="emailToEdit.to" placeholder="To">
             <input type="text" v-model="emailToEdit.subject" placeholder="Subject">
             <textarea name="msgBody" id="msgBody" cols="30" rows="10" v-model="emailToEdit.body"></textarea>
-            <button>send</button>
+            <button><router-link to="/email/inbox">Send</router-link></button>
         </form>
         </section>
         `,
