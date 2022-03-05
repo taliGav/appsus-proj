@@ -4,8 +4,8 @@ export default {
         <section class="note-preview img-preview">
             <div class="img-preview-details">
                 <h3>{{info.title}}</h3>
-                <img class="video" width="400" height="300" :src="info.url">
-                <img class="video" width="400" height="300" :src="https://www.youtube.com/embed/${this.info.url}">
+                <img class="video" :src="info.url">
+                <!-- <img class="video" width="400" height="300" :src="info.url"> -->
                 <!-- <img :src="imgUrl"  /> -->
             </div>
         </section>`,
@@ -37,3 +37,6 @@ export default {
 //     var videoPlayerContainers = document.querySelector(".video-player-area");
 //     videoPlayerContainers.innerHTML = videoPlayer;
 // }
+
+
+// <!-- <img class="video" width="400" height="300" :src="https://www.youtube.com/embed/${this.info.url}"> -->
