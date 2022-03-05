@@ -1,5 +1,9 @@
+.add-note-container{
+    margin: 20px;
+}
+
 .notes-container{
-    margin: 80px;
+    margin: 30px 80px;
 }
 
 .note-preview {

@@ -10,20 +10,17 @@ import userMsg from "./../../../cmps/reusable-cmps/user-msg.cmp.js";
 
 export default {
     template: `
-        <!-- <section class="keep-app app-main">
-            <note-list v-if="notes" :notes="notes" />
-        </section> -->
-
         <section v-if="notes" class="note-cmps page-height">
-        <input v-if="newNote" type="text" v-model="newNote.info.title" placeholder="Note Title"></label>
-        <input  v-if="newNote" type="text"  v-model="newNote.info.txt" placeholder="Note Text"></label>
-        <button @click="saveNote" >Save</button>
-        
-        <input v-if="newNote" type="text" placeholder="newTxtPHolder">
-        <button class="add-note" @click="addNote">Add note</button>
+            <div class="add-note-container flex">
+                <input v-if="newNote" type="text" v-model="newNote.info.title" placeholder="Note Title"></label>
+                <input  v-if="newNote" type="text"  v-model="newNote.info.txt" placeholder="Note Text"></label>
+                <button  v-if="newNote" @click="saveNote" >Save</button>
+                <!-- <input v-if="newNote" type="text" placeholder="newTxtPHolder"> -->
+                <button class="add-note" @click="addNote">Add note</button>
+            </div>
 
-        <div class="notes-container flex">
-            <div v-for="(note, idx) in notes">
+            <div class="notes-container flex">
+                <div v-for="(note, idx) in notes">
                 <component :is="note.type"  :info="note.info" :id="note.id" @update="updateNote"></component>
                 <button @click="deleteNote(note.id)">X</button>
                 <!-- <router-link :to="'/keep/edit/'+note.id">Edit</router-link> -->
@@ -56,11 +53,23 @@ export default {
             });
     },
     methods: {
-        updateNote(id,title,txt){
-            console.log('id',id);
-            console.log('title',title);
-            console.log('txt',txt);
-            
+        updateNote(id, title, txt) {
+            // console.log('id', id);
+            // console.log('title', title);
+            // console.log('txt', txt);
+            // const x = noteService.get(id);
+            // console.log(x);
+            noteService.get(id)
+            .then(() => {
+                const idx = this.notes.findIndex((note) => note.id === id);
+                this.notes[idx].id = id;
+                this.notes[idx].info.title = title;
+                this.notes[idx].info.txt = txt;
+                console.log(this.notes[idx]);
+                console.log(this.notes);
+                noteService.save(this.notes[idx]);
+            }).then(() => eventBus.emit('show-msg', { txt: 'Updated succesfully', type: 'success' }));
+
         },
 
         addNote() {
@@ -68,14 +77,9 @@ export default {
         },
 
         saveNote() {
-            // console.log('saveNote func is on...');
-            // console.log('note to save', this.newNote);
-
             noteService.save(this.newNote)
-                .then(() => eventBus.emit('show-msg', { txt: 'Saved succesfully', type: 'success' }))
-            // console.log('notes', this.notes);
-            this.notes.push(this.newNote)
-            // console.log('notes after push', this.notes);
+                .then(() => eventBus.emit('show-msg', { txt: 'Saved succesfully', type: 'success' }));
+            this.notes.push(this.newNote);
             this.newNote = noteService.getEmptyTxt();
         },
 
