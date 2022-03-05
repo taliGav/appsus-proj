@@ -1,3 +1,11 @@
+.add-note-container{
+    margin: 20px;
+}
+
+.notes-container{
+    margin: 30px 80px;
+}
+
 .note-preview {
     background-color: azure;
     border-radius: 8px;
