@@ -10,7 +10,7 @@ export default {
     template: `
         <section class='m-trash'>
             <email-filter v-if="emails" @filtered="setFilter"/>
-            <email-list v-if="emails" :emails="emailsForDisplay"  @remove="deleteEmail" @toggleInfo="changeToggle"/>
+            <email-list v-if="emails" :emails="emailsForDisplay" @toggleInfo="changeToggle"/>
         </section>
     `,
     data() {
@@ -43,15 +43,25 @@ export default {
                 });
         },
         changeToggle(email, info) {
-            if (info === 'star') email.isStared = !email.isStared;
-            else if (info === 'read') email.isRead = !email.isRead;
-            else if (info === 'checked') email.isChecked = !email.isChecked;
+            if (info === 'star') {
+                email.isStared = !email.isStared;
+                emailService.save(email);
+            }
+            else if (info === 'read') {
+                email.isRead = !email.isRead;
+                emailService.save(email);
+            }
+            else if (info === 'checked') {
+                email.isChecked = !email.isChecked;
+                emailService.save(email);
+            }
             else if (info === 'trash') {
-                const idx = this.emails.findIndex((email) => email.id === email.id);
-                this.emails.splice(idx, 1);
-                emailService.remove(idx);
+                emailService.remove(email.id)
+                    .then(() => {
+                        const idx = this.emails.findIndex((email) => email.id === email.id);
+                        this.emails.splice(idx, 1);
+                    });
             };
-            emailService.save(email);
         },
 
     },

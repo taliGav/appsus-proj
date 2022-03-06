@@ -75,7 +75,18 @@ function _createEmails() {
             id: 'e106',
             to: 'mlml@mlml.com',
             subject: 'bye!',
-            body: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+            body: 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb',
+            sentAt: 747945115000,
+            isChecked: false,
+            isRead: false,
+            isStared: false,
+            status: 'Trash',
+        },
+        {
+            id: 'e106',
+            to: 'mlml@mlml.com',
+            subject: 'bye!',
+            body: 'cccccccccccccccccccccccccccccccc',
             sentAt: 747945115000,
             isChecked: false,
             isRead: false,
@@ -134,7 +145,8 @@ function getEmptyEmail() {
         isRead: false,
         sentAt: + new Date(),
         to: '',
-        stared: false,
+        isChecked: false,
+        isStared: false,
         status: 'sent'
     };
 }
