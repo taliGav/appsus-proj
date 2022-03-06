@@ -3,6 +3,7 @@ export default {
     props: ['email'],
     template: `
         <section class="email-preview"  :class="{isRead: email.isRead}">
+            <p>{{star}}</p>
             <p class="preview-to">{{email.to}}</p>
             <p class="preview-msg">
                 <span class="preview-subject">{{email.subject}}</span>
@@ -26,6 +27,9 @@ export default {
             else {
                 return `${date.getFullYear()}`;
             }
+        },
+        star() {
+            if (this.email.isStared) return '⭐';
         }
     },
-}
+};

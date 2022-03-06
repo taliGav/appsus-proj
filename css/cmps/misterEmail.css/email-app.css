@@ -1,3 +1,11 @@
 .email-app {
     display: flex;
+    justify-content: space-between;
+}
+
+.emails-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
 }

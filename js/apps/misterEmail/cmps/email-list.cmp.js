@@ -7,7 +7,7 @@ export default {
             <ul>
                 <li v-for="email in emails" :key="email.id" >
                     <div class="actions">
-                        <input @click="toggle(email,'checked')" type="checkbox">
+                        <!-- <input @click="toggle(email,'checked')" type="checkbox"> -->
                         <button @click="toggle(email,'star')">⭐</button>
                         <button @click="toggle(email,'trash')">🗑️</button>
                         <button @click="toggle(email,'read')">👁️</button>

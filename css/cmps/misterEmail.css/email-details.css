@@ -1,0 +1,22 @@
+.email-details {
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.email-details div {
+    background-color: rgba(61, 129, 67, 0.637);
+    margin: 5px;
+    border-radius: 10px;
+    border: 3px solid black;
+}
+
+.email-details p {
+    margin: 5px;
+    border: 3px solid black;
+    min-height: 50px;
+    border-radius: 10px;
+    width: 600px;
+}

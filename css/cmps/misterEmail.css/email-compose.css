@@ -1,0 +1,31 @@
+.email-compose form {
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(115, 168, 115);
+}
+
+.email-compose form>* {
+    margin: 5px;
+}
+
+.email-compose button {
+    border: 3px solid black;
+    height: 30px;
+    border-radius: 10px;
+    width: 100px;
+}
+
+.email-compose input {
+    width: 462px;
+    border-radius: 10px;
+    height: 50px;
+    text-align: center;
+}
+
+.email-compose textarea {
+    border-radius: 10px;
+    border: 3px solid black;
+}

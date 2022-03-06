@@ -3,10 +3,12 @@ import { emailService } from "../service/email-service.service.js";
 export default {
     template: `
         <section v-if="email" class="email-details page-height">
+        <div>
             <p>{{email.to}}</p>
             <p>{{email.sentAt}}</p>
             <p>{{email.subject}}</p>
             <p>{{email.body}}</p>
+        </div>    
             <router-link to="/email/inbox">Return</router-link>
         </section>
         `,

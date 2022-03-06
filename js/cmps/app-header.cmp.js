@@ -19,7 +19,7 @@ export default {
                 </router-link>
             </div>
             <div  @click="displayOffButtons">
-                <router-link to="/email" class="email-link">
+                <router-link to="/email/inbox" class="email-link">
                     <img src="./css/img/email-bw.png" alt="logo">
                     <img src="./css/img/email-clr.png" alt="logo">
                     <h4>

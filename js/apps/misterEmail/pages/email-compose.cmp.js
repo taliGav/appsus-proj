@@ -4,11 +4,11 @@ export default {
     template: `
         <section class="email-compose page-height">
             <router-link to="/email/inbox">Return</router-link>
+            <form @submit.prevent="send">
         <h2>add mail</h2>
-        <form @submit.prevent="send">
             <input type="text" v-model="emailToEdit.to" placeholder="To">
             <input type="text" v-model="emailToEdit.subject" placeholder="Subject">
-            <textarea name="msgBody" id="msgBody" cols="30" rows="10" v-model="emailToEdit.body"></textarea>
+            <textarea name="msgBody" id="msgBody" cols="60" rows="20" v-model="emailToEdit.body"></textarea>
             <button>Send</button>
         </form>
         </section>
