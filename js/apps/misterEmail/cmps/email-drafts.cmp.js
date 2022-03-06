@@ -8,7 +8,7 @@ import { eventBus } from './../../../service/eventBus-service.js';
 export default {
     props: ['emails'],
     template: `
-        <section class='m-drafts'>
+        <section class='email-drafts'>
             <email-filter v-if="emails" @filtered="setFilter"/>
             <email-list v-if="emails" :emails="emailsForDisplay"  @toggleInfo="changeToggle"/>
         </section>

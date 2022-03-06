@@ -41,8 +41,7 @@ export default {
     created() {
         emailService.query()
             .then(emails => {
-                this.emails = emails
-                console.log(this.emails)});
+                this.emails = emails});
     },
     methods: {
         selectEmail(email) {
