@@ -5,7 +5,7 @@ export default {
             <div class="txt-preview-details" >
                 <h3 class="note-title" @keyup="update" contenteditable="true">{{info.title}}</h3>
                 <p  class="note-text" @keyup="update" contenteditable="true">{{info.txt}}</p>
-                <button @click="deleteCurrNote(id)">X</button>
+                <!-- <button @click="deleteCurrNote(id)">X</button> -->
             </div>
         </section>`,
     data() {

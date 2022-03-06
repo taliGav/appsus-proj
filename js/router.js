@@ -7,10 +7,11 @@ import aboutPage from './pages/about-page.cmp.js';
 import emailApp from './apps/misterEmail/pages/email-app.cmp.js';
 import emailCompose from './apps/misterEmail/pages/email-compose.cmp.js';
 import emailDetails from './apps/misterEmail/pages/email-details.cmp.js';
-import emailInbox from './apps/misterEmail/pages/email-inbox.cmp.js';
-import emailSent from './apps/misterEmail/pages/email-sent.cmp.js';
-import emaildDrafts from './apps/misterEmail/pages/email-drafts.cmp.js';
-import emailTrash from './apps/misterEmail/pages/email-trash.cmp.js';
+import emailInbox from './apps/misterEmail/cmps/email-inbox.cmp.js';
+import emailSent from './apps/misterEmail/cmps/email-sent.cmp.js';
+import emaildDrafts from './apps/misterEmail/cmps/email-drafts.cmp.js';
+import emailTrash from './apps/misterEmail/cmps/email-trash.cmp.js';
+
 // KEEP
 import keepApp from './apps/missKeep/pages/keep-app.cmp.js';
 // BOOKS

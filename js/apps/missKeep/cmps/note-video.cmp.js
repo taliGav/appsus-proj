@@ -9,7 +9,7 @@ export default {
                 <iframe width="373" height="210" src="https://www.youtube.com/embed/1FzEaIbqW3c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>                
                 <!-- <img :src="imgUrl"  /> -->
                 <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/UqyT8IEBkvY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
-                <button @click="deleteCurrNote(id)">X</button>
+                <!-- <button @click="deleteCurrNote(id)">X</button> -->
             </div>
         </section>`,
     data() {

@@ -6,7 +6,7 @@ export default {
             <h3 class="note-title" @keyup="update" contenteditable="true">{{info.title}}</h3>
                 <!-- <h3 class="note-title" @keyup="update" contenteditable="true">{{info.title}}</h3> -->
                 <img :src="info.url"  />
-                <button @click="deleteCurrNote(id)">X</button>
+                <!-- <button @click="deleteCurrNote(id)">X</button> -->
 
             </div>
         </section>`,

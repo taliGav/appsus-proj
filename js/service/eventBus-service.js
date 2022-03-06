@@ -1,3 +1,5 @@
+export const eventBus = { on, emit };
+
 function on(eventName, listener) {
     const callListener = ({ detail }) => {
         listener(detail);
@@ -12,11 +14,9 @@ function emit(eventName, data) {
     window.dispatchEvent(new CustomEvent(eventName, { detail: data }));
 }
 
-export const eventBus = { on, emit };
 
-export function showErrorMsg(txt) {
-    eventBus.emit('show-msg', { txt, type: 'error' });
-}
-export function showSuccessMsg(txt) {
-    eventBus.emit('show-msg', { txt, type: 'success' });
+
+
+export function emitForDisp(data) {
+    eventBus.emit('getFilteredEmailsByStatus', { data});
 }
