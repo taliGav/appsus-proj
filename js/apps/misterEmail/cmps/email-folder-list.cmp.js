@@ -1,9 +1,8 @@
 export default {
-
-    // props: ['??'],
     template: `
         <section class="email-folder-list" >
-            <router-link to="/email/compose" >
+            <nav class="nav-links">
+                <router-link to="/email/compose" >
             <!-- @send="sendMail" -->
                 <button>
                     <p>Create</p>        
@@ -11,20 +10,20 @@ export default {
                     <img  src="./css/img/writing-clr.png" alt="Create">
                 </button>
             </router-link>
-            <router-link to="/email/inbox" @click="setFilterBy('Recived')">
-                <button>
+            <button @click="setFilterBy('Received')">
+                <router-link to="/email/inbox" >
                     <p>Inbox</p>
                     <img src="./css/img/inbox-bw.png" alt="Inbox">
                     <img src="./css/img/inbox-clr.png" alt="Inbox">
-                </button>
-            </router-link >
-            <router-link to="/email/sent" @click="setFilterBy('Sent')">
-                <button>
+                </router-link >
+            </button>
+            <button  @click="setFilterBy('Sent')">
+                <router-link to="/email/sent">
                     <p>Sent</p>
                     <img src="./css/img/sent-bw.png" alt="Sent">
                     <img src="./css/img/sent-clr.png" alt="Sent">
-                </button>
-            </router-link >
+                </router-link >
+            </button>
             <!-- <router-link to="/email/stared" @click="setFilterBy('Stared')">
                 <button>
                     <p>Stared</p>
@@ -32,20 +31,21 @@ export default {
                     <img src="./css/img/star-clr.png" alt="Star">
                 </button>
             </router-link > -->
-            <router-link to="/email/drafts" @click="setFilterBy('Drafts')">
-                <button>
+            <button @click="setFilterBy('Drafts')">
+                <router-link to="/email/drafts" >
                     <p>Drafts</p>
                     <img src="./css/img/drafts-bw.png" alt="Drafts">
                     <img src="./css/img/drafts-clr.png" alt="Drafts">
-                </button>
-            </router-link >
-            <router-link to="/email/trash" @click="setFilterBy('Trash')">
-                <button>
+                </router-link >
+            </button>
+            <button @click="setFilterBy('Trash')">
+                <router-link to="/email/trash" >
                     <p>Trash</p>
                     <img src="./css/img/trash-bw.png" alt="Trash">
                     <img src="./css/img/trash-clr.png" alt="Trash">
-                </button>
-            </router-link >
+                </router-link >
+            </button>
+            </nav>
         </section>
     `,
     data() {
@@ -67,4 +67,4 @@ export default {
     },
     unmounted() {
     }
-}
+};

@@ -29,7 +29,7 @@ function _createEmails() {
             isChecked: false,
             isRead: false,
             isStared: false,
-            status:'Recived'
+            status: 'Received'
         }, {
             id: 'e102',
             to: 'mimi@mimi.com',
@@ -39,7 +39,7 @@ function _createEmails() {
             isChecked: false,
             isRead: false,
             isStared: false,
-            status:'Recived'
+            status: 'Received'
         }, {
             id: 'e103',
             to: 'mama@mama.com',
@@ -49,7 +49,7 @@ function _createEmails() {
             isChecked: false,
             isRead: false,
             isStared: false,
-            status:'Sent'
+            status: 'Sent'
         }, {
             id: 'e104',
             to: 'mumu@mumu.com',
@@ -59,7 +59,7 @@ function _createEmails() {
             isChecked: false,
             isRead: false,
             isStared: false,
-            status:'Recived',
+            status: 'Received',
         }, {
             id: 'e105',
             to: 'mlml@mlml.com',
@@ -69,9 +69,31 @@ function _createEmails() {
             isChecked: false,
             isRead: false,
             isStared: false,
-            status:'Recived',
+            status: 'Trash',
+        },
+        {
+            id: 'e106',
+            to: 'mlml@mlml.com',
+            subject: 'bye!',
+            body: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+            sentAt: 747945115000,
+            isChecked: false,
+            isRead: false,
+            isStared: false,
+            status: 'Trash',
+        },
+        {
+            id: 'e107',
+            to: 'mlml@mlml.com',
+            subject: 'bye!',
+            body: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+            sentAt: 747945115000,
+            isChecked: false,
+            isRead: false,
+            isStared: false,
+            status: 'Drafts',
         }
-    ];
+        ];
         utilService.saveToStorage(EMAILS_KEY, emails);
     }
     return emails;

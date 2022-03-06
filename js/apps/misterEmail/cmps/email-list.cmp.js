@@ -21,7 +21,6 @@ export default {
         `,
     components: {
         emailPreview,
-
     },
     methods: {
         deleteEmail(id) {
