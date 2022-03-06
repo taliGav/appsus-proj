@@ -147,7 +147,7 @@ function getEmptyEmail() {
         to: '',
         isChecked: false,
         isStared: false,
-        status: 'sent'
+        status: 'Sent'
     };
 }
 

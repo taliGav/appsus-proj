@@ -24,7 +24,6 @@ export default {
         emailList,
     },
     created() {
-        console.log('email-trash');
         this.unsubscribe = eventBus.on('getFilteredEmailsByStatus', this.emailsData);
     },
     methods: {

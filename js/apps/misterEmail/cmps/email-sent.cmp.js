@@ -23,8 +23,6 @@ export default {
         emailList,
     },
     created() {
-        console.log('email-sent');
-        console.log(this.emails);
         this.unsubscribe = eventBus.on('getFilteredEmailsByStatus', this.emailsData);
     },
     methods: {
