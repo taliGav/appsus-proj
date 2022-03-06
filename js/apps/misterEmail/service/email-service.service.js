@@ -29,7 +29,7 @@ function _createEmails() {
             isChecked: false,
             isRead: false,
             isStared: false,
-            status: 'Received'
+            status: 'Inbox'
         }, {
             id: 'e102',
             to: 'mimi@mimi.com',
@@ -39,7 +39,7 @@ function _createEmails() {
             isChecked: false,
             isRead: false,
             isStared: false,
-            status: 'Received'
+            status: 'Inbox'
         }, {
             id: 'e103',
             to: 'mama@mama.com',
@@ -59,7 +59,7 @@ function _createEmails() {
             isChecked: false,
             isRead: false,
             isStared: false,
-            status: 'Received',
+            status: 'Inbox',
         }, {
             id: 'e105',
             to: 'mlml@mlml.com',

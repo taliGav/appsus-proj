@@ -9,7 +9,7 @@ export default {
                     <img  src="./css/img/writing-clr.png" alt="Create">
                 </button>
                 </router-link>
-            <button @click="setFilterBy('Received')">
+            <button @click="setFilterBy('Inbox')">
                 <router-link to="/email/inbox" >
                     <p>Inbox</p>
                     <img src="./css/img/inbox-bw.png" alt="Inbox">
