@@ -34,13 +34,6 @@ export default {
         emailsData(data) {
             this.emails = data;
         },
-        moveToDelete(email) {
-            emailService.remove(emailId)
-                .then(() => {
-                    const idx = this.emails.findIndex((email) => email.id === emailId);
-                    this.emails.splice(idx, 1);
-                });
-        },
         changeToggle(email, info) {
             if (info === 'star') email.isStared = !email.isStared;
             else if (info === 'read') email.isRead = !email.isRead;

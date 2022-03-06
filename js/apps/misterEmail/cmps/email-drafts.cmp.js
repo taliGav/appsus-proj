@@ -10,7 +10,7 @@ export default {
     template: `
         <section class='m-drafts'>
             <email-filter v-if="emails" @filtered="setFilter"/>
-            <email-list v-if="emails" :emails="emailsForDisplay"  @remove="deleteEmail" @toggleInfo="changeToggle"/>
+            <email-list v-if="emails" :emails="emailsForDisplay"  @toggleInfo="changeToggle"/>
         </section>
     `,
     data() {
@@ -34,13 +34,6 @@ export default {
 
         emailsData(data) {
             this.emails = data;
-        },
-        deleteEmail(emailId) {
-            emailService.remove(emailId)
-                .then(() => {
-                    const idx = this.emails.findIndex((email) => email.id === emailId);
-                    this.emails.splice(idx, 1);
-                });
         },
         changeToggle(email, info) {
             if (info === 'star') email.isStared = !email.isStared;

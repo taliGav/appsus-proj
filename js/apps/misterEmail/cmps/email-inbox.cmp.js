@@ -6,12 +6,12 @@ import { eventBus } from './../../../service/eventBus-service.js';
 
 
 export default {
-    props: ['emails','lastStatus'],
+    props: ['emails', 'lastStatus'],
     template: `
         <section class='m-inbox'  @load="status">
             <email-filter v-if="emails" @filtered="setFilter"/>
-            <email-list v-if="emails" :emails="emailsForDisplay" @load="status" @remove="deleteEmail" @toggleInfo="changeToggle"/>
-            <email-list v-if="lastStatus" :emails="status"  @remove="deleteEmail" @toggleInfo="changeToggle"/>
+            <email-list v-if="emails" :emails="emailsForDisplay" @load="status" @toggleInfo="changeToggle"/>
+            <!-- <email-list v-if="lastStatus" :emails="status" @toggleInfo="changeToggle"/> -->
         </section>
     `,
     data() {
@@ -27,7 +27,7 @@ export default {
     },
     created() {
         console.log('email-inbox');
-        console.log('emails',this.emails);
+        console.log('emails', this.emails);
         console.log('lastStatus', this.lastStatus);
         this.unsubscribe = eventBus.on('getFilteredEmailsByStatus', this.emailsData);
     },
@@ -41,13 +41,6 @@ export default {
             console.log(this.emails);
 
         },
-        deleteEmail(emailId) {
-            emailService.remove(emailId)
-                .then(() => {
-                    const idx = this.emails.findIndex((email) => email.id === emailId);
-                    this.emails.splice(idx, 1);
-                });
-        },
         changeToggle(email, info) {
             if (info === 'star') email.isStared = !email.isStared;
             else if (info === 'read') email.isRead = !email.isRead;
@@ -60,18 +53,18 @@ export default {
             emailService.save(email);
         },
         status() {
-            console.log(this.emails)
-            emailService.query()
-            .then(emails => {
-                console.log(this.lastStatus);
-                if (!this.lastStatus) this.lastStatus = 'Received';
-                console.log(this.lastStatus);
-                this.emails = emails
-                console.log(this.emails)
-                const statusEmails = this.emails.filter(email => email.status === this.lastStatus)
-                console.log(statusEmails)
-                return statusEmails ;
-            });
+            console.log(this.emails);
+            emailService.query();
+            // .then(emails => {
+            //     console.log(this.lastStatus);
+            //         if (!this.lastStatus) this.lastStatus = 'Received';
+            //         console.log(this.lastStatus);
+            //         this.emails = emails
+            //         console.log(this.emails)
+            //         const statusEmails = this.emails.filter(email => email.status === this.lastStatus)
+            //         console.log(statusEmails)
+            //         return statusEmails ;
+            //     });
         }
 
         // emailsForDisplay() {
