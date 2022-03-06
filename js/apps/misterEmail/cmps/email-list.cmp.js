@@ -9,7 +9,7 @@ export default {
                     <div class="actions">
                         <input @click="toggle(email,'checked')" type="checkbox">
                         <button @click="toggle(email,'star')">⭐</button>
-                        <button @click="deleteEmail(email.id)">🗑️</button>
+                        <button @click="toggle(email,'trash')">🗑️</button>
                         <button @click="toggle(email,'read')">👁️</button>
                     </div>
                     <router-link class="email-preview-link" :to="'/email/'+email.id" >

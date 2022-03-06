@@ -7,9 +7,9 @@ import { eventBus } from './../../../service/eventBus-service.js';
 export default {
     props: ['emails'],
     template: `
-        <section class='m-sent'>
+        <section class='email-sent'>
             <email-filter v-if="emails" @filtered="setFilter"/>
-            <email-list v-if="emails" :emails="emailsForDisplay"  @remove="deleteEmail" @toggleInfo="changeToggle"/>
+            <email-list v-if="emails" :emails="emailsForDisplay" @toggleInfo="changeToggle"/>
         </section>
     `,
     data() {
@@ -34,7 +34,7 @@ export default {
         emailsData(data) {
             this.emails = data;
         },
-        deleteEmail(emailId) {
+        moveToDelete(email) {
             emailService.remove(emailId)
                 .then(() => {
                     const idx = this.emails.findIndex((email) => email.id === emailId);
@@ -45,6 +45,11 @@ export default {
             if (info === 'star') email.isStared = !email.isStared;
             else if (info === 'read') email.isRead = !email.isRead;
             else if (info === 'checked') email.isChecked = !email.isChecked;
+            else if (info === 'trash') {
+                email.status = 'Trash';
+                const idx = this.emails.findIndex((email) => email.id === email.id);
+                this.emails.splice(idx, 1);
+            };
             emailService.save(email);
         },
     },

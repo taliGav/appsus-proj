@@ -2,14 +2,14 @@ export default {
     template: `
         <section class="email-folder-list" >
             <nav class="nav-links">
+                <button>
                 <router-link to="/email/compose" >
             <!-- @send="sendMail" -->
-                <button>
                     <p>Create</p>        
                     <img  src="./css/img/writing-bw.png" alt="Create">
                     <img  src="./css/img/writing-clr.png" alt="Create">
-                </button>
-            </router-link>
+                </router-link>
+            </button>
             <button @click="setFilterBy('Received')">
                 <router-link to="/email/inbox" >
                     <p>Inbox</p>

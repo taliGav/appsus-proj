@@ -46,6 +46,11 @@ export default {
             if (info === 'star') email.isStared = !email.isStared;
             else if (info === 'read') email.isRead = !email.isRead;
             else if (info === 'checked') email.isChecked = !email.isChecked;
+            else if (info === 'trash') {
+                const idx = this.emails.findIndex((email) => email.id === email.id);
+                this.emails.splice(idx, 1);
+                emailService.remove(idx);
+            };
             emailService.save(email);
         },
 
